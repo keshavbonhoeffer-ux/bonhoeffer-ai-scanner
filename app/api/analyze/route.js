@@ -22,7 +22,7 @@ Return ONLY valid JSON.
   "designation":"",
   "company":"",
   "email":"",
-  "phone":""
+  "phone":"
 }
 
 Rules:

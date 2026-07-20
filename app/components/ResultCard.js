@@ -2,18 +2,11 @@
 
 export default function ResultCard({ data }) {
   const handleCreateLead = () => {
-    // Save extracted data before redirecting
+    // Save extracted lead data
     localStorage.setItem("leadData", JSON.stringify(data));
 
-    const authUrl =
-      `${process.env.NEXT_PUBLIC_SALESFORCE_LOGIN_URL}/services/oauth2/authorize` +
-      `?response_type=code` +
-      `&client_id=${process.env.NEXT_PUBLIC_SALESFORCE_CLIENT_ID}` +
-      `&redirect_uri=${encodeURIComponent(
-        process.env.NEXT_PUBLIC_SALESFORCE_CALLBACK_URL
-      )}`;
-
-    window.location.href = authUrl;
+    // Redirect to our PKCE login route
+    window.location.href = "/api/auth/login";
   };
 
   return (

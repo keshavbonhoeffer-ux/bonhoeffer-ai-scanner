@@ -1,50 +1,100 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 
-export default function OAuthSuccess() {
-  const [message, setMessage] = useState("Creating Lead...");
+import UploadCard from "./components/UploadCard";
+import PreviewCard from "./components/PreviewCard";
+import LoadingCard from "./components/LoadingCard";
+import ResultCard from "./components/ResultCard";
 
-  useEffect(() => {
-    async function createLead() {
-      try {
-        const accessToken = sessionStorage.getItem("sf_access_token");
-        const instanceUrl = sessionStorage.getItem("sf_instance_url");
-        const leadData = JSON.parse(localStorage.getItem("leadData"));
+export default function Home() {
+  const fileInputRef = useRef(null);
 
-        if (!accessToken || !instanceUrl || !leadData) {
-          setMessage("Missing Salesforce session.");
-          return;
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [preview, setPreview] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null);
+
+  // Open file picker
+  const handleScan = () => {
+    fileInputRef.current.click();
+  };
+
+  // Select image
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0];
+
+    if (!file) return;
+
+    setSelectedFile(file);
+    setResult(null);
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      setPreview(reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+  // Analyze image
+  const handleAnalyze = async () => {
+    if (!selectedFile) return;
+
+    setLoading(true);
+
+    try {
+      const reader = new FileReader();
+
+      reader.onloadend = async () => {
+        try {
+          const base64 = reader.result.split(",")[1];
+
+          const response = await fetch("/api/analyze", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              image: base64,
+            }),
+          });
+
+          const data = await response.json();
+
+          setLoading(false);
+
+          if (data.success) {
+            setResult(data.result);
+          } else {
+            alert(data.error || "AI analysis failed");
+          }
+        } catch (err) {
+          setLoading(false);
+          console.error(err);
+          alert("Something went wrong.");
         }
+      };
 
-        const response = await fetch("/api/salesforce/createLead", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            accessToken,
-            instanceUrl,
-            ...leadData,
-          }),
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          setMessage("✅ Lead Created Successfully!");
-        } else {
-          console.log(data);
-          setMessage("❌ Failed to create Lead.");
-        }
-      } catch (e) {
-        console.error(e);
-        setMessage("Unexpected Error");
-      }
+      reader.readAsDataURL(selectedFile);
+    } catch (err) {
+      setLoading(false);
+      console.error(err);
+      alert("Unable to analyze image.");
     }
+  };
 
-    createLead();
-  }, []);
+  // Choose another image
+  const handleChangeImage = () => {
+    setSelectedFile(null);
+    setPreview("");
+    setResult(null);
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
 
   return (
     <main
@@ -53,21 +103,34 @@ export default function OAuthSuccess() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        fontFamily: "Arial",
         background: "#eef7ef",
+        fontFamily: "Arial",
       }}
     >
-      <div
-        style={{
-          background: "#fff",
-          padding: "40px",
-          borderRadius: "15px",
-          boxShadow: "0 10px 30px rgba(0,0,0,.15)",
-          textAlign: "center",
-        }}
-      >
-        <h2>{message}</h2>
-      </div>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        hidden
+        onChange={handleFileChange}
+      />
+
+      {!preview && !loading && !result && (
+        <UploadCard onScan={handleScan} />
+      )}
+
+      {preview && !loading && !result && (
+        <PreviewCard
+          image={preview}
+          fileName={selectedFile?.name}
+          onAnalyze={handleAnalyze}
+          onChangeImage={handleChangeImage}
+        />
+      )}
+
+      {loading && <LoadingCard />}
+
+      {!loading && result && <ResultCard data={result} />}
     </main>
   );
 }
