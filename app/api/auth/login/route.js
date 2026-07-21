@@ -30,8 +30,8 @@ export async function GET() {
 
   response.cookies.set("pkce_verifier", codeVerifier, {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     path: "/",
     maxAge: 600,
   });
