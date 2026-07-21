@@ -141,11 +141,24 @@ export default function Home() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "#eef7ef",
         fontFamily: "Arial",
+
+        backgroundImage: `
+          linear-gradient(
+            rgba(11,143,60,0.60),
+            rgba(11,143,60,0.60)
+          ),
+          url("https://bonhoeffermachines.com/public/product_banner/2-gasoline-engine.webp")
+        `,
+
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
       }}
     >
-      {/* Gallery Input */}
+      {/* Gallery */}
+
       <input
         ref={galleryInputRef}
         type="file"
@@ -154,7 +167,8 @@ export default function Home() {
         onChange={handleFileChange}
       />
 
-      {/* Live Camera */}
+      {/* Camera */}
+
       {cameraOpen && (
         <CameraCard
           onCapture={handleCameraCapture}
@@ -162,7 +176,8 @@ export default function Home() {
         />
       )}
 
-      {/* Home */}
+      {/* Upload */}
+
       {!cameraOpen && !preview && !loading && !result && (
         <UploadCard
           onCameraClick={handleCameraClick}
@@ -171,6 +186,7 @@ export default function Home() {
       )}
 
       {/* Preview */}
+
       {!cameraOpen && preview && !loading && !result && (
         <PreviewCard
           image={preview}
@@ -181,9 +197,11 @@ export default function Home() {
       )}
 
       {/* Loading */}
+
       {!cameraOpen && loading && <LoadingCard />}
 
       {/* Result */}
+
       {!cameraOpen && !loading && result && (
         <ResultCard data={result} />
       )}
