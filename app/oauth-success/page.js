@@ -51,6 +51,26 @@ export default function OAuthSuccess() {
 
         if (result.success) {
           setMessage("✅ Lead Created Successfully!");
+
+          // Wait 2 seconds so user can see success message
+          setTimeout(() => {
+            // If opened inside Salesforce Quick Action
+            if (window.parent && window.parent !== window) {
+              window.parent.postMessage(
+                {
+                  type: "closeQuickAction",
+                },
+                "*"
+              );
+            }
+
+            // Close popup if possible
+            window.close();
+
+            // Fallback: go back to scanner home page
+            window.location.href = "/";
+          }, 2000);
+
         } else {
           alert(JSON.stringify(result, null, 2));
           setMessage("❌ Failed to Create Lead.");
