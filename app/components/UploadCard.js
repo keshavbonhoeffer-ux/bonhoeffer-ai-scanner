@@ -1,6 +1,6 @@
 "use client";
 
-export default function UploadCard({ onScan }) {
+export default function UploadCard({ onCameraClick, onGalleryClick }) {
   return (
     <div
       style={{
@@ -32,12 +32,13 @@ export default function UploadCard({ onScan }) {
         Scan a business card and automatically create a Lead in Salesforce using AI.
       </p>
 
+      {/* Camera Button */}
       <button
-        onClick={onScan}
+        onClick={onCameraClick}
         style={{
           width: "100%",
           padding: "18px",
-          fontSize: "24px",
+          fontSize: "22px",
           background: "#0B8F3C",
           color: "white",
           border: "none",
@@ -47,7 +48,35 @@ export default function UploadCard({ onScan }) {
           marginTop: "25px",
         }}
       >
-        📷 Scan Business Card
+        📷 Capture Business Card
+      </button>
+
+      <div
+        style={{
+          margin: "18px 0",
+          color: "#777",
+          fontWeight: "bold",
+        }}
+      >
+        OR
+      </div>
+
+      {/* Gallery Button */}
+      <button
+        onClick={onGalleryClick}
+        style={{
+          width: "100%",
+          padding: "18px",
+          fontSize: "22px",
+          background: "#ffffff",
+          color: "#0B8F3C",
+          border: "2px solid #0B8F3C",
+          borderRadius: "12px",
+          cursor: "pointer",
+          fontWeight: "bold",
+        }}
+      >
+        🖼️ Upload Business Card
       </button>
 
       <p

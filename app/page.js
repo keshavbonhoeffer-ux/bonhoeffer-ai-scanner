@@ -3,24 +3,56 @@
 import { useRef, useState } from "react";
 
 import UploadCard from "./components/UploadCard";
+import CameraCard from "./components/CameraCard";
 import PreviewCard from "./components/PreviewCard";
 import LoadingCard from "./components/LoadingCard";
 import ResultCard from "./components/ResultCard";
 
 export default function Home() {
-  const fileInputRef = useRef(null);
+  const galleryInputRef = useRef(null);
+
+  const [cameraOpen, setCameraOpen] = useState(false);
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
 
-  // Open file picker
-  const handleScan = () => {
-    fileInputRef.current.click();
+  // ===============================
+  // CAMERA
+  // ===============================
+
+  const handleCameraClick = () => {
+    setCameraOpen(true);
   };
 
-  // Select image
+  const handleCameraCancel = () => {
+    setCameraOpen(false);
+  };
+
+  const handleCameraCapture = (file) => {
+    setCameraOpen(false);
+
+    setSelectedFile(file);
+    setResult(null);
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      setPreview(reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+  // ===============================
+  // GALLERY
+  // ===============================
+
+  const handleGalleryClick = () => {
+    galleryInputRef.current?.click();
+  };
+
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
 
@@ -38,7 +70,10 @@ export default function Home() {
     reader.readAsDataURL(file);
   };
 
-  // Analyze image
+  // ===============================
+  // ANALYZE
+  // ===============================
+
   const handleAnalyze = async () => {
     if (!selectedFile) return;
 
@@ -85,14 +120,17 @@ export default function Home() {
     }
   };
 
-  // Choose another image
+  // ===============================
+  // CHANGE IMAGE
+  // ===============================
+
   const handleChangeImage = () => {
     setSelectedFile(null);
     setPreview("");
     setResult(null);
 
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
+    if (galleryInputRef.current) {
+      galleryInputRef.current.value = "";
     }
   };
 
@@ -107,19 +145,33 @@ export default function Home() {
         fontFamily: "Arial",
       }}
     >
+      {/* Gallery Input */}
       <input
-        ref={fileInputRef}
+        ref={galleryInputRef}
         type="file"
         accept="image/*"
         hidden
         onChange={handleFileChange}
       />
 
-      {!preview && !loading && !result && (
-        <UploadCard onScan={handleScan} />
+      {/* Live Camera */}
+      {cameraOpen && (
+        <CameraCard
+          onCapture={handleCameraCapture}
+          onCancel={handleCameraCancel}
+        />
       )}
 
-      {preview && !loading && !result && (
+      {/* Home */}
+      {!cameraOpen && !preview && !loading && !result && (
+        <UploadCard
+          onCameraClick={handleCameraClick}
+          onGalleryClick={handleGalleryClick}
+        />
+      )}
+
+      {/* Preview */}
+      {!cameraOpen && preview && !loading && !result && (
         <PreviewCard
           image={preview}
           fileName={selectedFile?.name}
@@ -128,9 +180,13 @@ export default function Home() {
         />
       )}
 
-      {loading && <LoadingCard />}
+      {/* Loading */}
+      {!cameraOpen && loading && <LoadingCard />}
 
-      {!loading && result && <ResultCard data={result} />}
+      {/* Result */}
+      {!cameraOpen && !loading && result && (
+        <ResultCard data={result} />
+      )}
     </main>
   );
 }
