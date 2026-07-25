@@ -1,0 +1,1844 @@
+[
+  {
+    "id": 1,
+    "brand": "MECHNOVA",
+    "category": "Brushcutter",
+    "model": "MBC37SC",
+
+    "keywords": [
+      "brush cutter",
+      "brushcutter",
+      "grass cutter",
+      "side pack",
+      "4 stroke",
+      "37.7cc",
+      "1.35hp",
+      "mbc37sc",
+      "grass",
+      "weed",
+      "farm",
+      "agriculture",
+      "roadside",
+      "garden",
+      "4 stroke brush cutter"
+    ],
+
+    "applications": [
+      "Grass Cutting",
+      "Weed Removal",
+      "Farm Maintenance",
+      "Garden Maintenance",
+      "Roadside Cleaning"
+    ],
+
+    "industries": [
+      "Agriculture",
+      "Horticulture",
+      "Landscaping",
+      "Government",
+      "Municipality"
+    ],
+
+    "specifications": {
+      "Maximum Power": "1.35 HP",
+      "Displacement": "37.7 cc",
+      "Engine Type": "4 Stroke (Side Pack Brushcutter)",
+      "Tube": "28 mm",
+      "Blade": "40T",
+      "Cutting Head": "Spool Included",
+      "Wheel Guard": "Paddy Wheel Guard",
+      "Starting System": "Manual Start"
+    },
+
+    "salesGuide": {
+      "position": "Value for Money",
+
+      "bestFor": [
+        "Medium Farms",
+        "Regular Farming",
+        "Daily Grass Cutting",
+        "Garden Maintenance",
+        "Roadside Cleaning"
+      ],
+
+      "recommendedCrops": [
+        "Grass",
+        "Bush",
+        "Weeds",
+        "Paddy Border",
+        "Small Sugarcane Fields"
+      ],
+
+      "idealCustomer": [
+        "Farmers",
+        "Dealers",
+        "Landscape Contractors",
+        "Government Buyers",
+        "First Time Buyers"
+      ],
+
+      "advantages": [
+        "Reliable 4 Stroke Engine",
+        "Fuel Efficient",
+        "Easy Maintenance",
+        "Low Vibration",
+        "Better Machine Balance",
+        "Affordable Price",
+        "Long Engine Life",
+        "Less Smoke",
+        "Smooth Performance"
+      ],
+
+      "limitations": [
+        "Not ideal for 8+ hours continuous work",
+        "Less comfortable than backpack model",
+        "Operator carries weight on side"
+      ],
+
+      "idealWorkingHours": "4-5 Hours",
+
+      "operatorComfort": "Medium",
+
+      "maintenanceLevel": "Easy",
+
+      "budgetLevel": "Economical",
+
+      "salesPitch": "Perfect combination of performance, reliability and affordability for everyday farming operations.",
+
+      "avoidIf": [
+        "Customer needs backpack comfort",
+        "Customer works continuously for entire day",
+        "Heavy commercial operation"
+      ]
+    },
+
+    "aiKnowledge": {
+
+      "productType": "Agricultural Brush Cutter",
+
+      "recommendedAgainst": [
+        "MBC37SBC"
+      ],
+
+      "betterThan": [
+        "Traditional 2 Stroke Brush Cutters"
+      ],
+
+      "similarProducts": [
+        "MBC37SBC"
+      ],
+
+      "upgradeModel": "MBC37SBC",
+
+      "downgradeModel": null,
+
+      "strengths": [
+        "Affordable",
+        "Fuel Efficient",
+        "Easy Maintenance",
+        "Reliable",
+        "Light Operating Cost"
+      ],
+
+      "weaknesses": [
+        "Medium Operator Comfort",
+        "Not ideal for long commercial work"
+      ],
+
+      "customerObjections": [
+        {
+          "question": "Why should I buy this model?",
+          "answer": "It offers an excellent balance between performance, fuel efficiency, maintenance cost and affordability."
+        },
+        {
+          "question": "Why is it better than a 2 stroke brush cutter?",
+          "answer": "It consumes less fuel, produces less smoke, runs quieter and requires less frequent maintenance."
+        },
+        {
+          "question": "Why not choose the backpack model?",
+          "answer": "If your work is regular farming for 4-5 hours, this model provides similar engine performance at a lower investment."
+        },
+        {
+          "question": "Is it suitable for sugarcane?",
+          "answer": "Yes, for light and medium sugarcane fields. For continuous commercial sugarcane work, MBC37SBC is a better choice."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+
+      "openingPitch": "This is our most popular 4 Stroke Side Pack Brush Cutter for everyday farming.",
+
+      "dealerPitch": "A fast-moving model with high farmer demand due to its balance of quality and price.",
+
+      "farmerPitch": "If you need a dependable machine for daily farming without spending extra, this is the ideal choice.",
+
+      "upsellProducts": [
+        "Engine Oil",
+        "Safety Kit",
+        "Extra Blade",
+        "Nylon Cutting Head",
+        "Tool Kit"
+      ],
+
+      "crossSellProducts": [
+        "ME70A Engine",
+        "Gasoline Water Pump",
+        "Power Tiller"
+      ],
+
+      "closingStatement": "For regular agricultural work, this model delivers excellent value and dependable performance."
+    },
+
+    "faqs": [
+      {
+        "question": "Is it a 4 Stroke machine?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Can it cut thick grass?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Can it remove weeds?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Is it suitable for farms?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Can beginners operate it?",
+        "answer": "Yes."
+      }
+    ],
+
+    "recommendedAccessories": [
+      "40T Blade",
+      "Safety Helmet",
+      "Safety Goggles",
+      "Hand Gloves",
+      "Engine Oil",
+      "Tool Kit",
+      "Harness Belt",
+      "Nylon Head"
+    ],
+
+    "spareParts": [
+      "Air Filter",
+      "Spark Plug",
+      "Throttle Cable",
+      "Fuel Filter",
+      "Fuel Tank",
+      "Starter Assembly",
+      "Blade",
+      "Gear Head",
+      "Drive Shaft",
+      "Clutch Assembly",
+      "Carburetor"
+    ],
+
+    "maintenance": {
+
+      "daily": [
+        "Check fuel level",
+        "Clean machine",
+        "Inspect blade",
+        "Check loose nuts"
+      ],
+
+      "weekly": [
+        "Clean air filter",
+        "Inspect spark plug",
+        "Lubricate gear head"
+      ],
+
+      "monthly": [
+        "Check throttle cable",
+        "Inspect fuel filter",
+        "Check gearbox grease"
+      ]
+    },
+
+    "safety": {
+      "ppe": [
+        "Helmet",
+        "Face Shield",
+        "Gloves",
+        "Safety Shoes",
+        "Ear Protection"
+      ],
+
+      "warnings": [
+        "Never operate without blade guard.",
+        "Always wear PPE.",
+        "Keep people away while operating.",
+        "Stop engine before maintenance."
+      ]
+    },
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company warranty policy",
+      "support": "Authorized Dealer Network"
+    },
+
+    "competitorPositioning": {
+      "strengths": [
+        "Fuel Efficient",
+        "Reliable Engine",
+        "Affordable Ownership",
+        "Easy Maintenance"
+      ],
+      "idealAgainst": [
+        "Generic 2 Stroke Brush Cutters"
+      ]
+    },
+
+    "recommendationRules": {
+      "recommendWhen": [
+        "Budget customer",
+        "Regular farming",
+        "Daily grass cutting",
+        "General agriculture",
+        "Medium farm"
+      ],
+
+      "doNotRecommendWhen": [
+        "Customer wants backpack comfort",
+        "8+ hour operation",
+        "Heavy commercial usage"
+      ]
+    }
+  },
+    {
+    "id": 2,
+    "brand": "MECHNOVA",
+    "category": "Brushcutter",
+    "model": "MBC37SBC",
+
+    "keywords": [
+      "brush cutter",
+      "brushcutter",
+      "back pack",
+      "backpack brush cutter",
+      "4 stroke",
+      "37.7cc",
+      "1.35hp",
+      "mbc37sbc",
+      "professional brush cutter",
+      "commercial brush cutter",
+      "sugarcane",
+      "grass",
+      "bush",
+      "field maintenance"
+    ],
+
+    "applications": [
+      "Grass Cutting",
+      "Bush Cutting",
+      "Agriculture",
+      "Field Maintenance",
+      "Plantation Maintenance",
+      "Commercial Farming"
+    ],
+
+    "industries": [
+      "Agriculture",
+      "Sugarcane Farming",
+      "Tea Plantation",
+      "Landscape Contractors",
+      "Government Projects"
+    ],
+
+    "specifications": {
+      "Maximum Power": "1.35 HP",
+      "Displacement": "37.7 cc",
+      "Engine Type": "4 Stroke (Back Pack Brushcutter)",
+      "Tube": "26 mm",
+      "Blade": "40T",
+      "Cutting Head": "Spool Included",
+      "Wheel Guard": "Paddy Wheel Guard",
+      "Starting System": "Manual Start"
+    },
+
+    "salesGuide": {
+
+      "position": "Professional Choice",
+
+      "bestFor": [
+        "Large Farms",
+        "Commercial Agriculture",
+        "Sugarcane Fields",
+        "Heavy Bush Cutting",
+        "Continuous Daily Operation"
+      ],
+
+      "recommendedCrops": [
+        "Sugarcane",
+        "Grass",
+        "Bush",
+        "Plantations",
+        "Large Agricultural Fields"
+      ],
+
+      "idealCustomer": [
+        "Commercial Farmers",
+        "Agricultural Contractors",
+        "Professional Operators",
+        "Large Land Owners",
+        "Government Departments"
+      ],
+
+      "advantages": [
+        "Backpack Design",
+        "Excellent Operator Comfort",
+        "Reduced Fatigue",
+        "Ideal Weight Distribution",
+        "Professional Performance",
+        "Reliable 4 Stroke Engine",
+        "Fuel Efficient",
+        "Comfortable During Long Working Hours",
+        "Suitable For Large Fields"
+      ],
+
+      "limitations": [
+        "Higher Initial Investment",
+        "Slightly Heavier Complete Assembly",
+        "Not Necessary For Small Gardens"
+      ],
+
+      "idealWorkingHours": "6-8 Hours",
+
+      "operatorComfort": "Excellent",
+
+      "maintenanceLevel": "Medium",
+
+      "budgetLevel": "Premium",
+
+      "salesPitch": "Built for professionals who need maximum comfort and productivity during long working hours.",
+
+      "avoidIf": [
+        "Very Small Gardens",
+        "Occasional Household Use",
+        "Customer Only Needs Light Grass Cutting"
+      ]
+    },
+
+    "aiKnowledge": {
+
+      "productType": "Professional Agricultural Brush Cutter",
+
+      "recommendedAgainst": [
+        "MBC37SC"
+      ],
+
+      "betterThan": [
+        "Standard Side Pack Brush Cutters",
+        "Most 2 Stroke Brush Cutters"
+      ],
+
+      "similarProducts": [
+        "MBC37SC"
+      ],
+
+      "upgradeModel": null,
+
+      "downgradeModel": "MBC37SC",
+
+      "strengths": [
+        "Maximum Comfort",
+        "Professional Use",
+        "Long Working Hours",
+        "Better Weight Distribution",
+        "Reduced Operator Fatigue"
+      ],
+
+      "weaknesses": [
+        "Higher Price",
+        "Not Ideal For Small Jobs"
+      ],
+
+      "customerObjections": [
+        {
+          "question": "Why should I buy this model?",
+          "answer": "It is designed for professionals who require comfort, reliability and high productivity throughout the working day."
+        },
+        {
+          "question": "Why is it better than the Side Pack model?",
+          "answer": "The backpack design distributes engine weight across the shoulders, reducing operator fatigue during long hours."
+        },
+        {
+          "question": "Is the engine more powerful?",
+          "answer": "Both models use the same 37.7 cc 4 Stroke engine with 1.35 HP. The main difference is operator comfort and carrying style."
+        },
+        {
+          "question": "Who should buy this model?",
+          "answer": "Commercial farmers, contractors and users working continuously for several hours every day."
+        },
+        {
+          "question": "Is it suitable for sugarcane?",
+          "answer": "Yes. It is one of the best choices for sugarcane fields because operators can work comfortably for longer periods."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+
+      "openingPitch": "Our premium Backpack Brush Cutter is specially designed for professional agricultural applications.",
+
+      "dealerPitch": "Recommended for customers looking for long-term comfort, premium quality and commercial performance.",
+
+      "farmerPitch": "If you work long hours in large fields, this model reduces fatigue and improves productivity.",
+
+      "upsellProducts": [
+        "Premium Engine Oil",
+        "Professional Safety Kit",
+        "Extra 40T Blade",
+        "Heavy Duty Nylon Head",
+        "Tool Kit",
+        "Spare Harness"
+      ],
+
+      "crossSellProducts": [
+        "Power Tiller",
+        "Water Pump",
+        "Gasoline Engine"
+      ],
+
+      "closingStatement": "For customers who work all day in demanding agricultural conditions, this is our recommended premium solution."
+    },
+
+    "faqs": [
+      {
+        "question": "Is this machine suitable for commercial farming?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Can it cut bushes?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Can it work in sugarcane fields?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Is it more comfortable than Side Pack?",
+        "answer": "Yes. The backpack design significantly reduces operator fatigue."
+      },
+      {
+        "question": "Does it have a 4 Stroke engine?",
+        "answer": "Yes."
+      }
+    ],
+
+    "recommendedAccessories": [
+      "40T Blade",
+      "Premium Harness",
+      "Professional Safety Helmet",
+      "Safety Goggles",
+      "Gloves",
+      "Engine Oil",
+      "Tool Kit",
+      "Nylon Cutting Head"
+    ],
+
+    "spareParts": [
+      "Air Filter",
+      "Spark Plug",
+      "Throttle Cable",
+      "Fuel Filter",
+      "Fuel Tank",
+      "Starter Assembly",
+      "Gear Head",
+      "Drive Shaft",
+      "Harness",
+      "Backpack Frame",
+      "Blade",
+      "Carburetor"
+    ],
+
+    "maintenance": {
+
+      "daily": [
+        "Inspect Backpack Harness",
+        "Clean Machine",
+        "Check Fuel",
+        "Inspect Blade",
+        "Check Loose Fasteners"
+      ],
+
+      "weekly": [
+        "Clean Air Filter",
+        "Lubricate Gear Head",
+        "Inspect Spark Plug"
+      ],
+
+      "monthly": [
+        "Inspect Fuel Filter",
+        "Inspect Backpack Assembly",
+        "Check Gearbox Grease",
+        "Inspect Drive Shaft"
+      ]
+    },
+
+    "safety": {
+
+      "ppe": [
+        "Helmet",
+        "Face Shield",
+        "Safety Goggles",
+        "Ear Protection",
+        "Safety Shoes",
+        "Hand Gloves"
+      ],
+
+      "warnings": [
+        "Always wear backpack correctly before starting.",
+        "Never operate without blade guard.",
+        "Keep bystanders away.",
+        "Stop engine before maintenance.",
+        "Inspect harness before every use."
+      ]
+    },
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company warranty policy",
+      "support": "Authorized Dealer Network"
+    },
+
+    "competitorPositioning": {
+      "strengths": [
+        "Excellent Comfort",
+        "Professional Performance",
+        "Reliable 4 Stroke Engine",
+        "Long Working Capability",
+        "Reduced Fatigue"
+      ],
+
+      "idealAgainst": [
+        "Standard Side Pack Brush Cutters",
+        "Generic 2 Stroke Backpack Machines"
+      ]
+    },
+
+    "recommendationRules": {
+
+      "recommendWhen": [
+        "Commercial Farming",
+        "Sugarcane",
+        "Large Farms",
+        "Long Working Hours",
+        "Professional Contractor",
+        "Customer Wants Maximum Comfort"
+      ],
+
+      "doNotRecommendWhen": [
+        "Budget Is Main Priority",
+        "Small Garden Work",
+        "Occasional Usage"
+      ]
+    }
+  },
+    {
+    "id": 3,
+    "brand": "MECHNOVA",
+    "category": "Gasoline Water Pump",
+    "model": "MWP1.5X1.5SA",
+
+    "keywords": [
+      "water pump",
+      "pump",
+      "1.5 inch",
+      "self priming",
+      "irrigation",
+      "farm pump",
+      "mwp1.5x1.5sa",
+      "portable pump",
+      "construction",
+      "tank filling"
+    ],
+
+    "applications": [
+      "Farm Irrigation",
+      "Water Transfer",
+      "Tank Filling",
+      "Construction Sites",
+      "Nursery Irrigation"
+    ],
+
+    "industries": [
+      "Agriculture",
+      "Construction",
+      "Horticulture",
+      "Nursery",
+      "Water Management"
+    ],
+
+    "specifications": {
+      "Pump Type": "Self-Priming",
+      "Maximum Power": "4 HP",
+      "Starting System": "Recoil",
+      "Maximum Pumping Capacity": "15000 Liters/Hour",
+      "Suction Diameter": "1.5 Inch",
+      "Discharge Diameter": "1.5 Inch",
+      "Total Head": "26 m",
+      "Suction Lift": "6 m",
+      "Fuel Tank Capacity": "2.0 L"
+    },
+
+    "salesGuide": {
+      "position": "Compact Irrigation Pump",
+
+      "bestFor": [
+        "Small Farms",
+        "Kitchen Gardens",
+        "Nursery",
+        "Water Transfer",
+        "Tank Filling"
+      ],
+
+      "recommendedCustomer": [
+        "Farmers",
+        "Nursery Owners",
+        "Contractors",
+        "Garden Owners"
+      ],
+
+      "advantages": [
+        "Portable",
+        "Fuel Efficient",
+        "Easy Starting",
+        "Compact Size",
+        "Reliable Performance"
+      ],
+
+      "limitations": [
+        "Not suitable for heavy irrigation",
+        "Lower discharge than 3 inch pump"
+      ],
+
+      "salesPitch": "Compact and reliable self-priming pump for everyday irrigation and water transfer."
+    },
+
+    "aiKnowledge": {
+      "strengths": [
+        "Portable",
+        "Easy Maintenance",
+        "Economical",
+        "Quick Priming"
+      ],
+
+      "weaknesses": [
+        "Limited discharge",
+        "Not ideal for very large farms"
+      ],
+
+      "upgradeModel": "MWP3X3SA",
+
+      "customerObjections": [
+        {
+          "question": "Can it irrigate a large farm?",
+          "answer": "It is designed for small to medium irrigation. For large irrigation areas, MWP3X3SA is recommended."
+        },
+        {
+          "question": "Is it self priming?",
+          "answer": "Yes."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+      "openingPitch": "A compact and dependable self-priming water pump for daily irrigation.",
+
+      "dealerPitch": "Popular entry-level pump with strong demand among small farmers.",
+
+      "upsellProducts": [
+        "Suction Hose",
+        "Delivery Hose",
+        "Engine Oil",
+        "Tool Kit"
+      ],
+
+      "crossSellProducts": [
+        "ME30A Engine",
+        "Brush Cutter"
+      ]
+    },
+
+    "recommendedAccessories": [
+      "Suction Hose",
+      "Delivery Hose",
+      "Hose Clamp",
+      "Engine Oil",
+      "Tool Kit"
+    ],
+
+    "spareParts": [
+      "Impeller",
+      "Pump Seal",
+      "Starter Assembly",
+      "Fuel Filter",
+      "Spark Plug",
+      "Carburetor"
+    ],
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company policy"
+    }
+  },
+
+  {
+    "id": 4,
+    "brand": "MECHNOVA",
+    "category": "Gasoline Water Pump",
+    "model": "MWP3X3SA",
+
+    "keywords": [
+      "3 inch pump",
+      "water pump",
+      "7hp",
+      "large irrigation",
+      "self priming",
+      "mwp3x3sa",
+      "construction pump",
+      "dewatering"
+    ],
+
+    "applications": [
+      "Large Irrigation",
+      "Flood Water Removal",
+      "Industrial Water Transfer",
+      "Construction",
+      "Agriculture"
+    ],
+
+    "industries": [
+      "Agriculture",
+      "Construction",
+      "Mining",
+      "Industrial",
+      "Government"
+    ],
+
+    "specifications": {
+      "Pump Type": "Self-Priming",
+      "Maximum Power": "7 HP",
+      "Starting System": "Recoil",
+      "Maximum Pumping Capacity": "55000 Liters/Hour",
+      "Suction Diameter": "3 Inch",
+      "Discharge Diameter": "3 Inch",
+      "Total Head": "28 m",
+      "Suction Lift": "8 m",
+      "Fuel Tank Capacity": "3.6 L"
+    },
+
+    "salesGuide": {
+      "position": "Heavy Duty Pump",
+
+      "bestFor": [
+        "Large Farms",
+        "Commercial Irrigation",
+        "Flood Water Removal",
+        "Construction Sites"
+      ],
+
+      "recommendedCustomer": [
+        "Large Farmers",
+        "Contractors",
+        "Government",
+        "Industrial Users"
+      ],
+
+      "advantages": [
+        "Very High Discharge",
+        "Heavy Duty Performance",
+        "Reliable Engine",
+        "Commercial Grade",
+        "Fast Water Transfer"
+      ],
+
+      "limitations": [
+        "Higher fuel consumption",
+        "Higher investment"
+      ],
+
+      "salesPitch": "Professional high-capacity pump for demanding irrigation and dewatering applications."
+    },
+
+    "aiKnowledge": {
+
+      "strengths": [
+        "High Flow Rate",
+        "Large Farm Solution",
+        "Industrial Performance",
+        "Reliable"
+      ],
+
+      "weaknesses": [
+        "Premium Price",
+        "Not necessary for small farms"
+      ],
+
+      "downgradeModel": "MWP1.5X1.5SA",
+
+      "customerObjections": [
+        {
+          "question": "Why choose this over the 1.5 inch model?",
+          "answer": "It delivers significantly higher water output, making it ideal for large irrigation and commercial use."
+        },
+        {
+          "question": "Is it suitable for flood water removal?",
+          "answer": "Yes. It is designed for heavy-duty water transfer applications."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+
+      "openingPitch": "Our premium heavy-duty self-priming water pump for commercial users.",
+
+      "dealerPitch": "Recommended for customers needing high discharge capacity.",
+
+      "upsellProducts": [
+        "Heavy Duty Hose",
+        "Engine Oil",
+        "Tool Kit",
+        "Fuel Can"
+      ],
+
+      "crossSellProducts": [
+        "ME70A Engine",
+        "Power Tiller"
+      ]
+    },
+
+    "recommendedAccessories": [
+      "3 Inch Hose",
+      "Hose Clamp",
+      "Engine Oil",
+      "Tool Kit"
+    ],
+
+    "spareParts": [
+      "Impeller",
+      "Mechanical Seal",
+      "Fuel Filter",
+      "Spark Plug",
+      "Starter Assembly",
+      "Carburetor"
+    ],
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company policy"
+    }
+  },
+    {
+    "id": 5,
+    "brand": "MECHNOVA",
+    "category": "Gasoline Engine",
+    "model": "ME30A",
+
+    "keywords": [
+      "engine",
+      "gasoline engine",
+      "4hp engine",
+      "113cc",
+      "me30a",
+      "4 stroke engine",
+      "ohv engine",
+      "small engine",
+      "power tiller engine",
+      "water pump engine"
+    ],
+
+    "applications": [
+      "Power Tiller",
+      "Water Pump",
+      "Agricultural Equipment",
+      "Construction Machinery",
+      "Mini Machinery"
+    ],
+
+    "industries": [
+      "Agriculture",
+      "Construction",
+      "Horticulture",
+      "Equipment Manufacturing"
+    ],
+
+    "specifications": {
+      "Maximum Power": "4 HP",
+      "Displacement": "113 cc",
+      "Engine Type": "4 Stroke OHV",
+      "Cooling System": "Air Cooled",
+      "Cylinder Bore": "60 × 40 mm",
+      "Fuel Tank Capacity": "2.0 L",
+      "Engine Oil Capacity": "350 ml",
+      "Starting System": "Recoil"
+    },
+
+    "salesGuide": {
+      "position": "Compact Multi-Purpose Engine",
+
+      "bestFor": [
+        "Small Machinery",
+        "Power Pumps",
+        "Mini Tillers",
+        "Agricultural Equipment"
+      ],
+
+      "recommendedCustomer": [
+        "Farmers",
+        "Machine Manufacturers",
+        "OEM Partners",
+        "Repair Workshops"
+      ],
+
+      "advantages": [
+        "Compact Design",
+        "Fuel Efficient",
+        "Reliable OHV Engine",
+        "Easy Starting",
+        "Low Maintenance",
+        "Light Weight"
+      ],
+
+      "limitations": [
+        "Not suitable for heavy-duty industrial equipment",
+        "Lower power than 7 HP engine"
+      ],
+
+      "salesPitch": "A dependable and fuel-efficient 4 HP engine for compact agricultural and industrial applications."
+    },
+
+    "aiKnowledge": {
+      "strengths": [
+        "Reliable",
+        "Fuel Efficient",
+        "Compact",
+        "Low Maintenance"
+      ],
+
+      "weaknesses": [
+        "Limited power for heavy machinery"
+      ],
+
+      "upgradeModel": "ME70A",
+
+      "customerObjections": [
+        {
+          "question": "Is 4 HP enough?",
+          "answer": "Yes, for water pumps, mini tillers and light agricultural machinery."
+        },
+        {
+          "question": "Can I use it continuously?",
+          "answer": "Yes, with proper maintenance and recommended operating conditions."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+      "openingPitch": "A reliable OHV engine designed for compact agricultural machines.",
+
+      "dealerPitch": "Excellent entry-level engine with strong demand among OEMs and farmers.",
+
+      "upsellProducts": [
+        "Engine Oil",
+        "Air Filter",
+        "Spark Plug",
+        "Tool Kit"
+      ],
+
+      "crossSellProducts": [
+        "MWP1.5X1.5SA",
+        "Power Tiller"
+      ]
+    },
+
+    "recommendedAccessories": [
+      "Engine Oil",
+      "Spark Plug",
+      "Fuel Filter",
+      "Tool Kit"
+    ],
+
+    "spareParts": [
+      "Carburetor",
+      "Air Filter",
+      "Spark Plug",
+      "Starter Assembly",
+      "Fuel Tank",
+      "Fuel Filter",
+      "Governor",
+      "Recoil Assembly"
+    ],
+
+    "maintenance": {
+      "daily": [
+        "Check engine oil",
+        "Inspect fuel level",
+        "Clean exterior"
+      ],
+      "weekly": [
+        "Clean air filter",
+        "Inspect spark plug"
+      ],
+      "monthly": [
+        "Replace engine oil",
+        "Inspect fuel filter"
+      ]
+    },
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company warranty policy"
+    }
+  },
+
+  {
+    "id": 6,
+    "brand": "MECHNOVA",
+    "category": "Gasoline Engine",
+    "model": "ME70A",
+
+    "keywords": [
+      "engine",
+      "7hp engine",
+      "210cc",
+      "gasoline engine",
+      "4 stroke",
+      "ohv",
+      "me70a",
+      "heavy duty engine",
+      "industrial engine"
+    ],
+
+    "applications": [
+      "Power Tiller",
+      "Water Pump",
+      "Agricultural Equipment",
+      "Construction Machinery",
+      "Concrete Mixer"
+    ],
+
+    "industries": [
+      "Agriculture",
+      "Construction",
+      "Industrial",
+      "OEM Manufacturing"
+    ],
+
+    "specifications": {
+      "Maximum Power": "7 HP",
+      "Displacement": "210 cc",
+      "Engine Type": "4 Stroke OHV",
+      "Cooling System": "Air Cooled",
+      "Cylinder Bore": "70 × 54 mm",
+      "Fuel Tank Capacity": "3.6 L",
+      "Engine Oil Capacity": "600 ml",
+      "Starting System": "Recoil"
+    },
+
+    "salesGuide": {
+
+      "position": "Heavy Duty Professional Engine",
+
+      "bestFor": [
+        "Commercial Agriculture",
+        "Heavy Machinery",
+        "Power Tillers",
+        "Large Water Pumps",
+        "Construction Equipment"
+      ],
+
+      "recommendedCustomer": [
+        "Commercial Farmers",
+        "OEM Manufacturers",
+        "Industrial Users",
+        "Contractors"
+      ],
+
+      "advantages": [
+        "High Torque",
+        "Reliable OHV Technology",
+        "Commercial Performance",
+        "Fuel Efficient",
+        "Long Service Life",
+        "Heavy Duty Design"
+      ],
+
+      "limitations": [
+        "Higher investment",
+        "Heavier than 4 HP engine"
+      ],
+
+      "salesPitch": "Professional-grade 7 HP engine built for demanding agricultural and industrial applications."
+    },
+
+    "aiKnowledge": {
+
+      "strengths": [
+        "High Power",
+        "Heavy Duty",
+        "Reliable",
+        "Commercial Grade",
+        "Long Life"
+      ],
+
+      "weaknesses": [
+        "Higher fuel consumption than 4 HP model"
+      ],
+
+      "downgradeModel": "ME30A",
+
+      "customerObjections": [
+        {
+          "question": "Why should I choose 7 HP?",
+          "answer": "It provides higher torque and power for demanding equipment like tillers, large pumps and industrial machinery."
+        },
+        {
+          "question": "Is it suitable for continuous operation?",
+          "answer": "Yes. It is designed for heavy-duty commercial applications."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+
+      "openingPitch": "Our premium OHV engine for professional agricultural and industrial equipment.",
+
+      "dealerPitch": "Highly recommended for OEM customers requiring dependable heavy-duty performance.",
+
+      "upsellProducts": [
+        "Premium Engine Oil",
+        "Air Filter",
+        "Spark Plug",
+        "Fuel Filter",
+        "Tool Kit"
+      ],
+
+      "crossSellProducts": [
+        "MWP3X3SA",
+        "MT900GA-208CC",
+        "MT900GA1-208CC"
+      ]
+    },
+
+    "recommendedAccessories": [
+      "Premium Engine Oil",
+      "Fuel Filter",
+      "Spark Plug",
+      "Air Filter",
+      "Tool Kit"
+    ],
+
+    "spareParts": [
+      "Carburetor",
+      "Cylinder Head",
+      "Air Filter",
+      "Fuel Filter",
+      "Spark Plug",
+      "Starter Assembly",
+      "Governor",
+      "Fuel Tank",
+      "Recoil Starter"
+    ],
+
+    "maintenance": {
+      "daily": [
+        "Check oil level",
+        "Inspect fuel level",
+        "Clean engine body"
+      ],
+      "weekly": [
+        "Clean air filter",
+        "Inspect spark plug",
+        "Inspect recoil starter"
+      ],
+      "monthly": [
+        "Replace engine oil",
+        "Inspect fuel filter",
+        "Check governor settings"
+      ]
+    },
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company warranty policy"
+    }
+  },
+    {
+    "id": 7,
+    "brand": "MECHNOVA",
+    "category": "Gasoline Chainsaw",
+    "model": "MCS58A-22SN",
+
+    "keywords": [
+      "chainsaw",
+      "chain saw",
+      "58cc",
+      "22 inch",
+      "gasoline chainsaw",
+      "petrol chainsaw",
+      "tree cutter",
+      "wood cutter",
+      "logging",
+      "mcs58a22sn",
+      "mcs58a-22sn"
+    ],
+
+    "applications": [
+      "Wood Cutting",
+      "Tree Cutting",
+      "Firewood Preparation",
+      "Forestry",
+      "Plantation Maintenance",
+      "Timber Cutting"
+    ],
+
+    "industries": [
+      "Forestry",
+      "Agriculture",
+      "Construction",
+      "Wood Industry",
+      "Plantation"
+    ],
+
+    "specifications": {
+      "Engine Type": "2 Stroke",
+      "Displacement": "58 cc",
+      "Maximum Power": "3.2 HP",
+      "Guide Bar": "22 Inch",
+      "Chain Size": "0.325 Inch",
+      "Fuel Tank Capacity": "550 ml",
+      "Oil Tank Capacity": "260 ml",
+      "Maximum RPM": "12500 RPM",
+      "Fuel Mixture": "40:1 Synthetic Oil / 25:1 Mineral Oil"
+    },
+
+    "salesGuide": {
+
+      "position": "Professional Wood Cutting Machine",
+
+      "bestFor": [
+        "Tree Cutting",
+        "Wood Cutting",
+        "Forestry",
+        "Firewood Preparation",
+        "Commercial Logging"
+      ],
+
+      "recommendedCustomer": [
+        "Farmers",
+        "Forestry Workers",
+        "Timber Contractors",
+        "Plantation Owners",
+        "Wood Cutting Professionals"
+      ],
+
+      "advantages": [
+        "Powerful 58 cc Engine",
+        "22 Inch Guide Bar",
+        "High Cutting Speed",
+        "Heavy Duty Construction",
+        "Professional Performance",
+        "Reliable Starting",
+        "Suitable For Thick Trees"
+      ],
+
+      "limitations": [
+        "Requires Fuel Mixing",
+        "Requires Chain Lubrication",
+        "Not suitable for indoor operation"
+      ],
+
+      "idealWorkingHours": "5-7 Hours",
+
+      "operatorComfort": "Good",
+
+      "maintenanceLevel": "Medium",
+
+      "budgetLevel": "Professional",
+
+      "salesPitch": "A powerful professional chainsaw designed for demanding wood cutting and forestry applications."
+    },
+
+    "aiKnowledge": {
+
+      "productType": "Professional Gasoline Chainsaw",
+
+      "strengths": [
+        "High Power",
+        "Long Guide Bar",
+        "Fast Cutting",
+        "Professional Grade",
+        "Reliable Engine"
+      ],
+
+      "weaknesses": [
+        "Requires fuel mixture",
+        "Regular chain maintenance required"
+      ],
+
+      "customerObjections": [
+        {
+          "question": "Can it cut thick trees?",
+          "answer": "Yes. The 58 cc engine with a 22-inch guide bar is suitable for cutting medium to large trees."
+        },
+        {
+          "question": "Is it suitable for daily commercial use?",
+          "answer": "Yes. It is designed for professional forestry and commercial wood cutting."
+        },
+        {
+          "question": "Does it require chain oil?",
+          "answer": "Yes. Proper chain lubrication is essential for safe operation and longer chain life."
+        },
+        {
+          "question": "Can beginners use it?",
+          "answer": "Yes, but proper training and safety equipment are strongly recommended."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+
+      "openingPitch": "Our professional 58 cc chainsaw delivers powerful cutting performance for forestry and agricultural applications.",
+
+      "dealerPitch": "Highly recommended for timber contractors, plantation owners and professional wood cutting businesses.",
+
+      "farmerPitch": "If you regularly cut trees, prepare firewood or maintain plantations, this model offers excellent power and durability.",
+
+      "upsellProducts": [
+        "Chain Oil",
+        "2 Stroke Engine Oil",
+        "Extra Chain",
+        "Guide Bar",
+        "Tool Kit",
+        "Safety Helmet",
+        "Safety Gloves"
+      ],
+
+      "crossSellProducts": [
+        "Brush Cutter",
+        "Power Tiller",
+        "Gasoline Engine"
+      ],
+
+      "closingStatement": "For professional cutting performance with dependable reliability, this chainsaw is an excellent investment."
+    },
+
+    "faqs": [
+      {
+        "question": "Is it suitable for cutting large trees?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Does it require chain oil?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Can it cut hardwood?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Is it suitable for commercial work?",
+        "answer": "Yes."
+      },
+      {
+        "question": "Is it easy to start?",
+        "answer": "Yes. It features a reliable recoil starting system."
+      }
+    ],
+
+    "recommendedAccessories": [
+      "22 Inch Guide Bar",
+      "Saw Chain",
+      "Chain Oil",
+      "2 Stroke Engine Oil",
+      "Tool Kit",
+      "Safety Helmet",
+      "Safety Goggles",
+      "Safety Gloves",
+      "Ear Protection"
+    ],
+
+    "spareParts": [
+      "Guide Bar",
+      "Saw Chain",
+      "Spark Plug",
+      "Air Filter",
+      "Fuel Filter",
+      "Chain Sprocket",
+      "Chain Brake",
+      "Starter Assembly",
+      "Carburetor",
+      "Clutch Drum",
+      "Fuel Tank",
+      "Oil Pump"
+    ],
+
+    "maintenance": {
+
+      "daily": [
+        "Check chain tension",
+        "Check chain oil level",
+        "Inspect guide bar",
+        "Clean air filter",
+        "Inspect fuel level"
+      ],
+
+      "weekly": [
+        "Sharpen chain",
+        "Inspect spark plug",
+        "Clean cooling fins"
+      ],
+
+      "monthly": [
+        "Replace fuel filter if required",
+        "Inspect clutch",
+        "Inspect sprocket",
+        "Check carburetor adjustment"
+      ]
+    },
+
+    "safety": {
+
+      "ppe": [
+        "Safety Helmet",
+        "Face Shield",
+        "Safety Goggles",
+        "Ear Protection",
+        "Chainsaw Gloves",
+        "Safety Shoes"
+      ],
+
+      "warnings": [
+        "Never operate without chain brake.",
+        "Always wear complete PPE.",
+        "Keep both hands on the machine while cutting.",
+        "Never cut above shoulder height.",
+        "Stop engine before maintenance.",
+        "Maintain proper chain lubrication."
+      ]
+    },
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company warranty policy",
+      "support": "Authorized Dealer Network"
+    },
+
+    "competitorPositioning": {
+
+      "strengths": [
+        "Powerful Engine",
+        "Professional Grade",
+        "Long Guide Bar",
+        "Reliable Performance",
+        "Suitable For Heavy Duty Work"
+      ],
+
+      "idealAgainst": [
+        "Generic 52 cc Chainsaws",
+        "Entry-Level Petrol Chainsaws"
+      ]
+    },
+
+    "recommendationRules": {
+
+      "recommendWhen": [
+        "Tree Cutting",
+        "Wood Cutting",
+        "Forestry",
+        "Firewood Preparation",
+        "Commercial Timber Work"
+      ],
+
+      "doNotRecommendWhen": [
+        "Very light home gardening",
+        "Indoor cutting applications"
+      ]
+    }
+  },
+    {
+    "id": 8,
+    "brand": "MECHNOVA",
+    "category": "Gasoline Tiller",
+    "model": "MT900GA-208CC",
+
+    "keywords": [
+      "power tiller",
+      "tiller",
+      "cultivator",
+      "208cc",
+      "7hp",
+      "mt900ga",
+      "gear drive",
+      "agriculture",
+      "soil preparation"
+    ],
+
+    "applications": [
+      "Soil Preparation",
+      "Agriculture",
+      "Vegetable Farming",
+      "Garden Cultivation",
+      "Inter Cultivation"
+    ],
+
+    "industries": [
+      "Agriculture",
+      "Horticulture",
+      "Vegetable Farming",
+      "Commercial Farming"
+    ],
+
+    "specifications": {
+      "Maximum Power": "7 HP",
+      "Engine": "208 cc, 4 Stroke",
+      "Crankshaft": "40Cr Heavy Duty",
+      "Working Width": "1050 mm",
+      "Working Depth": "≥ 200 mm",
+      "Transmission": "Gear Type (2 Forward, 1 Reverse)",
+      "Starting System": "Recoil Starter",
+      "Air Filter": "Oil Bath Type",
+      "Handle": "Rotatable",
+      "Tyre Size": "4.00-8 Inflatable",
+      "Engine Oil Capacity": "0.6 L",
+      "Fuel Tank Capacity": "3.5 L",
+      "Gearbox Oil Capacity": "1.8 L"
+    },
+
+    "salesGuide": {
+      "position": "Professional Power Tiller",
+      "bestFor": [
+        "Medium Farms",
+        "Vegetable Farming",
+        "Soil Preparation",
+        "Commercial Agriculture"
+      ],
+      "advantages": [
+        "Heavy Duty Gear Transmission",
+        "7 HP OHV Engine",
+        "Inflatable Tyres",
+        "Deep Cultivation",
+        "Easy Operation"
+      ],
+      "limitations": [
+        "Not suitable for extremely rocky land"
+      ],
+      "salesPitch": "A heavy-duty power tiller designed for professional farming and efficient soil preparation."
+    },
+
+    "aiKnowledge": {
+      "strengths": [
+        "High Torque",
+        "Deep Cultivation",
+        "Reliable Gear Drive"
+      ],
+      "customerObjections": [
+        {
+          "question": "Can it work in hard soil?",
+          "answer": "Yes. The heavy-duty gearbox and 7 HP engine provide excellent performance in most agricultural soils."
+        },
+        {
+          "question": "Why choose inflatable tyres?",
+          "answer": "Inflatable tyres provide better grip, smoother movement and improved operator comfort."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+      "openingPitch": "A professional 7 HP power tiller built for serious farming.",
+      "dealerPitch": "Recommended for farmers looking for high productivity and long machine life.",
+      "upsellProducts": [
+        "Engine Oil",
+        "Extra Tines",
+        "Tool Kit"
+      ],
+      "crossSellProducts": [
+        "ME70A",
+        "MWP3X3SA"
+      ]
+    },
+
+    "recommendedAccessories": [
+      "Rotary Tines",
+      "Engine Oil",
+      "Tool Kit",
+      "Safety Gloves"
+    ],
+
+    "spareParts": [
+      "Rotary Blade",
+      "Air Filter",
+      "Spark Plug",
+      "Fuel Filter",
+      "Clutch",
+      "Gearbox",
+      "Drive Belt",
+      "Tyres"
+    ],
+
+    "maintenance": {
+      "daily": [
+        "Check Engine Oil",
+        "Inspect Tines",
+        "Clean Machine"
+      ],
+      "weekly": [
+        "Clean Air Filter",
+        "Check Gearbox Oil"
+      ],
+      "monthly": [
+        "Inspect Clutch",
+        "Tighten Bolts"
+      ]
+    },
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company warranty policy"
+    }
+  },
+
+  {
+    "id": 9,
+    "brand": "MECHNOVA",
+    "category": "Gasoline Tiller",
+    "model": "MT900GA1-208CC",
+
+    "keywords": [
+      "power tiller",
+      "cultivator",
+      "208cc",
+      "7hp",
+      "mt900ga1",
+      "solid tyre",
+      "gear drive"
+    ],
+
+    "applications": [
+      "Agriculture",
+      "Soil Preparation",
+      "Garden Cultivation",
+      "Field Farming"
+    ],
+
+    "industries": [
+      "Agriculture",
+      "Commercial Farming",
+      "Horticulture"
+    ],
+
+    "specifications": {
+      "Maximum Power": "7 HP",
+      "Engine": "208 cc, 4 Stroke",
+      "Crankshaft": "40Cr Heavy Duty",
+      "Working Width": "1050 mm",
+      "Working Depth": "≥ 200 mm",
+      "Transmission": "Gear Type",
+      "Transmission Steps": "2 Forward, 1 Reverse",
+      "Starting System": "Recoil Starter",
+      "Air Filter": "Oil Bath Type",
+      "Handle": "Rotatable",
+      "Tyre Size": "3.50-8 Solid",
+      "Engine Oil Capacity": "0.6 L",
+      "Fuel Tank Capacity": "3.5 L",
+      "Gearbox Oil Capacity": "1.8 L"
+    },
+
+    "salesGuide": {
+      "position": "Commercial Power Tiller",
+      "bestFor": [
+        "Commercial Farming",
+        "Large Fields",
+        "Heavy Soil Preparation"
+      ],
+      "advantages": [
+        "Solid Tyres",
+        "Heavy Duty Gearbox",
+        "Reliable 7 HP Engine",
+        "Less Tyre Maintenance"
+      ],
+      "limitations": [
+        "Slightly lower ride comfort than inflatable tyres"
+      ],
+      "salesPitch": "Designed for commercial users who need maximum durability and minimum maintenance."
+    },
+
+    "aiKnowledge": {
+      "strengths": [
+        "Solid Tyres",
+        "Commercial Grade",
+        "Reliable Performance"
+      ],
+      "customerObjections": [
+        {
+          "question": "Why solid tyres?",
+          "answer": "Solid tyres eliminate puncture problems and reduce maintenance costs."
+        },
+        {
+          "question": "Which tiller is better?",
+          "answer": "Choose MT900GA for better ride comfort. Choose MT900GA1 for durability and puncture-free operation."
+        }
+      ]
+    },
+
+    "salesAssistant": {
+      "openingPitch": "A commercial-grade tiller designed for continuous agricultural operations.",
+      "dealerPitch": "Excellent choice for customers demanding low maintenance and maximum reliability.",
+      "upsellProducts": [
+        "Engine Oil",
+        "Rotary Blades",
+        "Tool Kit"
+      ],
+      "crossSellProducts": [
+        "ME70A",
+        "MWP3X3SA"
+      ]
+    },
+
+    "recommendedAccessories": [
+      "Rotary Blade",
+      "Tool Kit",
+      "Engine Oil",
+      "Safety Gloves"
+    ],
+
+    "spareParts": [
+      "Rotary Blade",
+      "Gearbox",
+      "Air Filter",
+      "Spark Plug",
+      "Fuel Filter",
+      "Solid Tyres",
+      "Clutch Assembly"
+    ],
+
+    "maintenance": {
+      "daily": [
+        "Inspect Tines",
+        "Check Engine Oil",
+        "Clean Machine"
+      ],
+      "weekly": [
+        "Clean Air Filter",
+        "Inspect Gearbox"
+      ],
+      "monthly": [
+        "Inspect Clutch",
+        "Tighten Fasteners"
+      ]
+    },
+
+    "warranty": {
+      "manufacturer": "MECHNOVA",
+      "coverage": "As per company warranty policy"
+    }
+  }
+]
