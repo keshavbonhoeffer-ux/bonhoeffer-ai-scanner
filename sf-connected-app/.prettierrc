@@ -15,3 +15,4 @@
     }
   ]
 }
+node knowledge-engine/buildKnowledge.js

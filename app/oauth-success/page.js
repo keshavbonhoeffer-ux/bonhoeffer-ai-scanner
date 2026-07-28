@@ -22,13 +22,28 @@ export default function OAuthSuccess() {
         const sfAccessToken = sessionStorage.getItem("sf_access_token");
         const sfInstanceUrl = sessionStorage.getItem("sf_instance_url");
 
-        const leadData = JSON.parse(localStorage.getItem("leadData"));
+        const leadData = JSON.parse(
+          localStorage.getItem("leadData") || "null"
+        );
 
-        if (!sfAccessToken || !sfInstanceUrl || !leadData) {
+        // Salesforce login failed
+        if (!sfAccessToken || !sfInstanceUrl) {
           setMessage("❌ Missing Salesforce session.");
           return;
         }
 
+        // BON AI login only (no lead to create)
+        if (!leadData) {
+          setMessage("✅ Salesforce Login Successful!");
+
+          setTimeout(() => {
+            window.location.href = "/bon-ai";
+          }, 1500);
+
+          return;
+        }
+
+        // Business Card Scanner flow
         setMessage("Creating Lead in Salesforce...");
 
         const response = await fetch("/api/salesforce/createLead", {
@@ -52,9 +67,7 @@ export default function OAuthSuccess() {
         if (result.success) {
           setMessage("✅ Lead Created Successfully!");
 
-          // Wait 2 seconds so user can see success message
           setTimeout(() => {
-            // If opened inside Salesforce Quick Action
             if (window.parent && window.parent !== window) {
               window.parent.postMessage(
                 {
@@ -64,13 +77,10 @@ export default function OAuthSuccess() {
               );
             }
 
-            // Close popup if possible
             window.close();
 
-            // Fallback: go back to scanner home page
             window.location.href = "/";
           }, 2000);
-
         } else {
           alert(JSON.stringify(result, null, 2));
           setMessage("❌ Failed to Create Lead.");

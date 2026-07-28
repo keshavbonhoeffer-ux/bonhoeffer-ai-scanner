@@ -1,10 +1,49 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
 import path from "path";
-
+import { getLeads, getAccounts, getOpportunities, getProducts } from "@/lib/salesforce/api";
 const genAI = new GoogleGenerativeAI(
   process.env.GEMINI_API_KEY
 );
+// ==========================================
+// Load Salesforce Knowledge
+// ==========================================
+
+const salesforceKnowledgePath = path.join(
+  process.cwd(),
+  "knowledge",
+  "salesforce"
+);
+
+let salesforceKnowledge = "";
+
+if (fs.existsSync(salesforceKnowledgePath)) {
+
+  const files = fs.readdirSync(salesforceKnowledgePath);
+
+  files.forEach(file => {
+
+    if (file.endsWith(".md")) {
+
+      salesforceKnowledge +=
+`\n=============================
+${file.replace(".md","").toUpperCase()}
+=============================
+
+`;
+
+      salesforceKnowledge += fs.readFileSync(
+        path.join(salesforceKnowledgePath, file),
+        "utf8"
+      );
+
+      salesforceKnowledge += "\n\n";
+
+    }
+
+  });
+
+}
 
 // ==========================================
 // Load Product Database
@@ -152,7 +191,13 @@ function detectIntent(message) {
   if (findProduct(query)) {
     return "PRODUCT";
   }
-
+if (
+  query.includes("show my leads") ||
+  query.includes("my leads") ||
+  query.includes("list leads")
+) {
+  return "MY_LEADS";
+}
   return "GEMINI";
 }
 
@@ -165,9 +210,11 @@ export async function POST(req) {
   try {
 
     const {
-      message,
-      history = []
-    } = await req.json();
+  message,
+  history = [],
+  accessToken,
+  instanceUrl
+} = await req.json();
 
     if (!message) {
 
@@ -185,6 +232,45 @@ export async function POST(req) {
     const intent = detectIntent(message);
 
     switch (intent) {
+      case "MY_LEADS": {
+
+  if (!accessToken) {
+    return Response.json({
+      reply: "Please login to Salesforce first."
+    });
+  }
+
+  try {
+
+    const leads = await getLeads(accessToken);
+
+    if (!leads || leads.length === 0) {
+      return Response.json({
+        reply: "No Leads found."
+      });
+    }
+
+    let reply = "📋 Your Leads\n\n";
+
+    leads.slice(0, 10).forEach((lead, index) => {
+      reply += `${index + 1}. ${lead.Name}\n`;
+    });
+
+    return Response.json({
+      reply
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    return Response.json({
+      reply: "Failed to fetch Leads from Salesforce."
+    });
+
+  }
+
+}
       // ==========================================
       // PRODUCT SEARCH
       // ==========================================
@@ -874,14 +960,25 @@ Designed and developed by Keshav Ranjan.
           model: "gemini-flash-latest"
         });
 
-        const prompt = `
+       const prompt = `
 You are BON AI, the official AI Assistant of Bonhoeffer Machines Pvt. Ltd.
+
+====================================================
+BON AI SALESFORCE KNOWLEDGE
+====================================================
+
+${salesforceKnowledge}
+
+====================================================
+END OF SALESFORCE KNOWLEDGE
+====================================================
 
 Conversation History:
 ${JSON.stringify(history, null, 2)}
 
 Current User Message:
 ${message}
+
 Rules:
 1. Answer professionally.
 2. Use previous conversation for follow-up questions.
@@ -889,26 +986,27 @@ Rules:
 4. Never create fake Bonhoeffer models.
 5. Recommend Bonhoeffer products whenever suitable.
 6. Keep answers concise and helpful.
-7. If product knowledge exists, always prefer it over general knowledge.
+7. If Salesforce knowledge contains the answer, ALWAYS use it first.
+8. If Salesforce knowledge does not contain the answer, then answer using Gemini.
+9. Never say you don't know without checking the Salesforce knowledge first.
 `;
+try {
 
-        try {
+  const result = await model.generateContent(prompt);
 
-          const result = await model.generateContent(prompt);
+  return Response.json({
+    reply: result.response.text()
+  });
 
-          return Response.json({
-            reply: result.response.text()
-          });
+} catch (error) {
 
-        } catch (error) {
+  console.error("Gemini Error:", error);
 
-          console.error("Gemini Error:", error);
+  return Response.json({
+    reply: `Gemini Error: ${error.message}`
+  });
 
-          return Response.json({
-            reply: `Gemini Error: ${error.message}`
-          });
-
-        }
+}
 
       }
 
@@ -920,8 +1018,7 @@ Rules:
 
     return Response.json(
       {
-        reply:
-          "Sorry, BON AI is temporarily unavailable. Please try again later."
+        reply: "Sorry, BON AI is temporarily unavailable. Please try again later."
       },
       {
         status: 500

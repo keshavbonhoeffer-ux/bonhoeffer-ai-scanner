@@ -8,7 +8,7 @@ export default function ChatWindow({ open, onClose }) {
   const [messages, setMessages] = useState([
     {
       sender: "ai",
-      text: "👋 Hello Keshav!\n\nI am BON AI.\n\nHow can I help you today?",
+      text: "🚨 THIS IS THE NEW CHATWINDOW FILE 🚨",
     },
   ]);
 
@@ -36,18 +36,24 @@ export default function ChatWindow({ open, onClose }) {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/bon-ai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const accessToken = sessionStorage.getItem("sf_access_token");
+const instanceUrl = sessionStorage.getItem("sf_instance_url");
+alert("Access Token: " + accessToken);
+alert("Instance URL: " + instanceUrl);
 
-        // Send complete conversation to BON AI
-        body: JSON.stringify({
-          message: question,
-          history: updatedMessages,
-        }),
-      });
+const response = await fetch("/api/bon-ai", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+
+  body: JSON.stringify({
+    message: question,
+    history: updatedMessages,
+    accessToken,
+    instanceUrl,
+  }),
+});
 
       const data = await response.json();
 
@@ -111,32 +117,58 @@ export default function ChatWindow({ open, onClose }) {
       }}
     >
       <div
-        style={{
-          background: "#0B6E4F",
-          color: "#fff",
-          padding: "18px 22px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontWeight: "bold",
-          fontSize: "18px",
-        }}
-      >
-        <span>🤖 BON AI</span>
+  style={{
+    background: "#0B6E4F",
+    color: "#fff",
+    padding: "18px 22px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    fontWeight: "bold",
+    fontSize: "18px",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: "10px",
+    }}
+  >
+    <span>🤖 BON AI</span>
 
-        <button
-          onClick={onClose}
-          style={{
-            background: "transparent",
-            border: "none",
-            color: "#fff",
-            fontSize: "24px",
-            cursor: "pointer",
-          }}
-        >
-          ×
-        </button>
-              </div>
+    <button
+      onClick={() => {
+        window.location.href = "/api/auth/login";
+      }}
+      style={{
+        background: "#ffffff",
+        color: "#0B6E4F",
+        border: "none",
+        borderRadius: "8px",
+        padding: "6px 10px",
+        cursor: "pointer",
+        fontSize: "12px",
+        fontWeight: "bold",
+      }}
+    >
+      Login
+    </button>
+  </div>
+
+  <button
+    onClick={onClose}
+    style={{
+      background: "transparent",
+      border: "none",
+      color: "#fff",
+      fontSize: "24px",
+      cursor: "pointer",
+    }}
+  >
+    ×
+  </button>
+</div>
 
       <div
         style={{
