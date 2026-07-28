@@ -7,8 +7,15 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value:
-              "frame-ancestors 'self' https://enterprise-inspiration-3374.lightning.force.com https://enterprise-inspiration-3374.my.salesforce.com;",
+            value: `
+              frame-ancestors
+              'self'
+              https://*.lightning.force.com
+              https://*.my.salesforce.com
+              https://*.visualforce.com
+              https://*.vf.force.com
+              https://*.salesforce.com;
+            `.replace(/\s+/g, " ").trim(),
           },
         ],
       },
