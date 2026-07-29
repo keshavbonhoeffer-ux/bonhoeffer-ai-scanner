@@ -38,8 +38,6 @@ export default function ChatWindow({ open, onClose }) {
     try {
       const accessToken = sessionStorage.getItem("sf_access_token");
 const instanceUrl = sessionStorage.getItem("sf_instance_url");
-alert("Access Token: " + accessToken);
-alert("Instance URL: " + instanceUrl);
 
 const response = await fetch("/api/bon-ai", {
   method: "POST",
@@ -100,6 +98,7 @@ const response = await fetch("/api/bon-ai", {
   }
 
   return (
+    
     <div
       style={{
         position: "fixed",
