@@ -1,7 +1,13 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
 import path from "path";
-import { getLeads, getAccounts, getOpportunities, getProducts } from "@/lib/salesforce/api";
+import {
+  getLeads,
+  getAccounts,
+  getOpportunities,
+  getTopOpportunities,
+  getProducts
+} from "@/lib/salesforce/api";
 const genAI = new GoogleGenerativeAI(
   process.env.GEMINI_API_KEY
 );
@@ -198,6 +204,62 @@ if (
 ) {
   return "MY_LEADS";
 }
+if (
+  query.includes("top opportunities") ||
+  query.includes("show top opportunities") ||
+  query.includes("top deals") ||
+  query.includes("largest opportunities")
+) {
+  return "TOP_OPPORTUNITIES";
+}
+// ===============================
+// BUSINESS ANALYTICS
+// ===============================
+
+if (
+  query.includes("top opportunities") ||
+  query.includes("highest opportunity") ||
+  query.includes("largest opportunity")
+) {
+  return "TOP_OPPORTUNITIES";
+}
+
+if (
+  query.includes("top accounts") ||
+  query.includes("largest accounts") ||
+  query.includes("best customers")
+) {
+  return "TOP_ACCOUNTS";
+}
+
+if (
+  query.includes("top sales person") ||
+  query.includes("top salesperson") ||
+  query.includes("best salesperson") ||
+  query.includes("top performer")
+) {
+  return "TOP_SALESPERSON";
+}
+
+if (
+  query.includes("pipeline") ||
+  query.includes("sales pipeline")
+) {
+  return "PIPELINE";
+}
+
+if (
+  query.includes("dashboard")
+) {
+  return "DASHBOARD";
+}
+
+if (
+  query.includes("report") ||
+  query.includes("create report")
+) {
+  return "REPORT";
+}
   return "GEMINI";
 }
 
@@ -231,7 +293,10 @@ export async function POST(req) {
 
     const intent = detectIntent(message);
 
-    switch (intent) {
+console.log("Message:", message);
+console.log("Detected Intent:", intent);
+
+switch (intent) {
       case "MY_LEADS": {
 
   if (!accessToken) {
@@ -951,10 +1016,62 @@ Designed and developed by Keshav Ranjan.
 
       }
       // ==========================================
+// TOP OPPORTUNITIES
+// ==========================================
+
+case "TOP_OPPORTUNITIES": {
+
+  console.log("✅ TOP_OPPORTUNITIES CASE EXECUTED");
+
+  if (!accessToken) {
+  return Response.json({
+    reply: "Please login to Salesforce first."
+  });
+}
+
+  try {
+
+    const opportunities = await getTopOpportunities(accessToken);
+
+    if (!opportunities || opportunities.length === 0) {
+      return Response.json({
+        reply: "No Opportunities found."
+      });
+    }
+
+    let reply = "🏆 Top 10 Opportunities\n\n";
+
+    opportunities.forEach((opp, index) => {
+
+      reply += `${index + 1}. ${opp.Name}\n`;
+      reply += `💰 Amount : ₹${opp.Amount || 0}\n`;
+      reply += `📍 Stage : ${opp.StageName}\n`;
+      reply += `📅 Close Date : ${opp.CloseDate}\n\n`;
+
+    });
+
+    return Response.json({
+      reply
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    return Response.json({
+      reply: "Failed to fetch Top Opportunities."
+    });
+
+  }
+
+}
+      // ==========================================
       // GEMINI FALLBACK
       // ==========================================
 
       default: {
+
+        console.log("❌ DEFAULT (GEMINI) CASE EXECUTED");
 
         const model = genAI.getGenerativeModel({
           model: "gemini-flash-latest"

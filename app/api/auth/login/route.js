@@ -9,7 +9,10 @@ function base64url(buffer) {
     .replace(/=/g, "");
 }
 
-export async function GET() {
+export async function GET(request) {
+  const { searchParams } = new URL(request.url);
+  const source = searchParams.get("source") || "scanner";
+
   const codeVerifier = base64url(crypto.randomBytes(32));
 
   const codeChallenge = base64url(
@@ -28,6 +31,7 @@ export async function GET() {
 
   const response = NextResponse.redirect(authUrl);
 
+  // PKCE verifier
   response.cookies.set("pkce_verifier", codeVerifier, {
     httpOnly: true,
     secure: true,
@@ -36,5 +40,16 @@ export async function GET() {
     maxAge: 600,
   });
 
+  // Who started OAuth?
+  response.cookies.set("oauth_source", source, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    path: "/",
+    maxAge: 600,
+  });
+
+  console.log("OAuth Source Cookie:", source);
+  
   return response;
 }

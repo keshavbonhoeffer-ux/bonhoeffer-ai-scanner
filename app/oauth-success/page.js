@@ -6,14 +6,17 @@ export default function OAuthSuccess() {
   const [message, setMessage] = useState("Connecting to Salesforce...");
 
   useEffect(() => {
-    async function createLead() {
+    async function handleOAuth() {
       try {
-        // Read token from URL
         const params = new URLSearchParams(window.location.search);
 
         const accessToken = params.get("accessToken");
         const instanceUrl = params.get("instanceUrl");
+        const source = params.get("source") || "scanner";
+        console.log("OAuth Source:", source);
+console.log("Current URL:", window.location.href);
 
+        // Save Salesforce session
         if (accessToken && instanceUrl) {
           sessionStorage.setItem("sf_access_token", accessToken);
           sessionStorage.setItem("sf_instance_url", instanceUrl);
@@ -22,18 +25,15 @@ export default function OAuthSuccess() {
         const sfAccessToken = sessionStorage.getItem("sf_access_token");
         const sfInstanceUrl = sessionStorage.getItem("sf_instance_url");
 
-        const leadData = JSON.parse(
-          localStorage.getItem("leadData") || "null"
-        );
-
-        // Salesforce login failed
         if (!sfAccessToken || !sfInstanceUrl) {
           setMessage("❌ Missing Salesforce session.");
           return;
         }
 
-        // BON AI login only (no lead to create)
-        if (!leadData) {
+        // ==========================
+        // BON AI LOGIN
+        // ==========================
+        if (source === "bonai") {
           setMessage("✅ Salesforce Login Successful!");
 
           setTimeout(() => {
@@ -43,7 +43,18 @@ export default function OAuthSuccess() {
           return;
         }
 
-        // Business Card Scanner flow
+        // ==========================
+        // AI SCANNER
+        // ==========================
+        const leadData = JSON.parse(
+          localStorage.getItem("leadData") || "null"
+        );
+
+        if (!leadData) {
+          setMessage("No Lead Data Found.");
+          return;
+        }
+
         setMessage("Creating Lead in Salesforce...");
 
         const response = await fetch("/api/salesforce/createLead", {
@@ -65,6 +76,8 @@ export default function OAuthSuccess() {
         console.log("===================================");
 
         if (result.success) {
+          localStorage.removeItem("leadData");
+
           setMessage("✅ Lead Created Successfully!");
 
           setTimeout(() => {
@@ -92,7 +105,7 @@ export default function OAuthSuccess() {
       }
     }
 
-    createLead();
+    handleOAuth();
   }, []);
 
   return (

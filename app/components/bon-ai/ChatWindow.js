@@ -38,6 +38,8 @@ export default function ChatWindow({ open, onClose }) {
     try {
       const accessToken = sessionStorage.getItem("sf_access_token");
 const instanceUrl = sessionStorage.getItem("sf_instance_url");
+console.log("Access Token:", accessToken);
+console.log("Instance URL:", instanceUrl);
 
 const response = await fetch("/api/bon-ai", {
   method: "POST",
@@ -134,11 +136,11 @@ const response = await fetch("/api/bon-ai", {
       gap: "10px",
     }}
   >
-    <span>🤖 BON AI</span>
+    <span>🤖 BON AI - LOGIN TEST</span>
 
     <button
       onClick={() => {
-        window.location.href = "/api/auth/login";
+        window.location.href = "/api/auth/login?source=bonai";
       }}
       style={{
         background: "#ffffff",

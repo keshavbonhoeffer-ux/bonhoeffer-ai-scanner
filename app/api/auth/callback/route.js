@@ -13,6 +13,8 @@ export async function GET(request) {
   }
 
   const codeVerifier = request.cookies.get("pkce_verifier")?.value;
+  const oauthSource =
+    request.cookies.get("oauth_source")?.value || "scanner";
 
   if (!codeVerifier) {
     return NextResponse.json(
@@ -52,8 +54,9 @@ export async function GET(request) {
   }
 
   return NextResponse.redirect(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/oauth-success?accessToken=${encodeURIComponent(
-      tokenData.access_token
-    )}&instanceUrl=${encodeURIComponent(tokenData.instance_url)}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/oauth-success` +
+      `?accessToken=${encodeURIComponent(tokenData.access_token)}` +
+      `&instanceUrl=${encodeURIComponent(tokenData.instance_url)}` +
+      `&source=${encodeURIComponent(oauthSource)}`
   );
 }
