@@ -267,6 +267,14 @@ if (
 }
 
 if (
+  query.includes("business this month") ||
+  query.includes("show my business this month") ||
+  query.includes("monthly business")
+) {
+  return "MONTHLY_BUSINESS";
+}
+
+if (
   query.includes("dashboard")
 ) {
   return "DASHBOARD";
@@ -1132,6 +1140,14 @@ case "TOP_INTERNATIONAL_OPPORTUNITIES": {
     });
 
   }
+
+}
+
+case "MONTHLY_BUSINESS": {
+
+  return Response.json({
+    reply: "Monthly Business feature is under development."
+  });
 
 }
 
