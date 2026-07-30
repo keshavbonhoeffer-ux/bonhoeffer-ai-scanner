@@ -8,7 +8,7 @@ export default function ChatWindow({ open, onClose }) {
   const [messages, setMessages] = useState([
     {
       sender: "ai",
-      text: "🚨 THIS IS THE NEW CHATWINDOW FILE 🚨",
+      text: "🚨 Hello Bonnhoeffer Salesforce User I am Your Ai Assistaant ",
     },
   ]);
 

@@ -8,6 +8,9 @@ import {
   getTopOpportunities,
   getProducts
 } from "@/lib/salesforce/api";
+
+import { getTopOpportunitiesSummary } from "@/lib/bonai/business";
+
 const genAI = new GoogleGenerativeAI(
   process.env.GEMINI_API_KEY
 );
@@ -204,22 +207,37 @@ if (
 ) {
   return "MY_LEADS";
 }
-if (
-  query.includes("top opportunities") ||
-  query.includes("show top opportunities") ||
-  query.includes("top deals") ||
-  query.includes("largest opportunities")
-) {
-  return "TOP_OPPORTUNITIES";
-}
 // ===============================
 // BUSINESS ANALYTICS
 // ===============================
 
+// ==========================================
+// TOP OPPORTUNITIES
+// ==========================================
+
+if (
+  query.includes("top domestic opportunities") ||
+  query.includes("domestic top opportunities") ||
+  query.includes("top opportunities domestic")
+) {
+  return "TOP_DOMESTIC_OPPORTUNITIES";
+}
+
+if (
+  query.includes("top international opportunities") ||
+  query.includes("international top opportunities") ||
+  query.includes("top opportunities international")
+) {
+  return "TOP_INTERNATIONAL_OPPORTUNITIES";
+}
+
 if (
   query.includes("top opportunities") ||
+  query.includes("show top opportunities") ||
+  query.includes("top deals") ||
   query.includes("highest opportunity") ||
-  query.includes("largest opportunity")
+  query.includes("largest opportunity") ||
+  query.includes("largest opportunities")
 ) {
   return "TOP_OPPORTUNITIES";
 }
@@ -292,6 +310,8 @@ export async function POST(req) {
     }
 
     const intent = detectIntent(message);
+
+    console.log("Detected Intent =", intent);
 
 console.log("Message:", message);
 console.log("Detected Intent:", intent);
@@ -1024,31 +1044,14 @@ case "TOP_OPPORTUNITIES": {
   console.log("✅ TOP_OPPORTUNITIES CASE EXECUTED");
 
   if (!accessToken) {
-  return Response.json({
-    reply: "Please login to Salesforce first."
-  });
-}
+    return Response.json({
+      reply: "Please login to Salesforce first."
+    });
+  }
 
   try {
 
-    const opportunities = await getTopOpportunities(accessToken);
-
-    if (!opportunities || opportunities.length === 0) {
-      return Response.json({
-        reply: "No Opportunities found."
-      });
-    }
-
-    let reply = "🏆 Top 10 Opportunities\n\n";
-
-    opportunities.forEach((opp, index) => {
-
-      reply += `${index + 1}. ${opp.Name}\n`;
-      reply += `💰 Amount : ₹${opp.Amount || 0}\n`;
-      reply += `📍 Stage : ${opp.StageName}\n`;
-      reply += `📅 Close Date : ${opp.CloseDate}\n\n`;
-
-    });
+    const reply = await getTopOpportunitiesSummary(accessToken);
 
     return Response.json({
       reply
@@ -1065,9 +1068,76 @@ case "TOP_OPPORTUNITIES": {
   }
 
 }
-      // ==========================================
-      // GEMINI FALLBACK
-      // ==========================================
+
+case "TOP_DOMESTIC_OPPORTUNITIES": {
+
+  console.log("✅ TOP_DOMESTIC_OPPORTUNITIES CASE EXECUTED");
+
+  if (!accessToken) {
+    return Response.json({
+      reply: "Please login to Salesforce first."
+    });
+  }
+
+  try {
+
+    const reply = await getTopOpportunitiesSummary(
+      accessToken,
+      "Domestic"
+    );
+
+    return Response.json({
+      reply
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    return Response.json({
+      reply: "Failed to fetch Domestic Opportunities."
+    });
+
+  }
+
+}
+
+case "TOP_INTERNATIONAL_OPPORTUNITIES": {
+
+  console.log("✅ TOP_INTERNATIONAL_OPPORTUNITIES CASE EXECUTED");
+
+  if (!accessToken) {
+    return Response.json({
+      reply: "Please login to Salesforce first."
+    });
+  }
+
+  try {
+
+    const reply = await getTopOpportunitiesSummary(
+      accessToken,
+      "International"
+    );
+
+    return Response.json({
+      reply
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    return Response.json({
+      reply: "Failed to fetch International Opportunities."
+    });
+
+  }
+
+}
+
+// ==========================================
+// GEMINI FALLBACK
+// ==========================================
 
       default: {
 
