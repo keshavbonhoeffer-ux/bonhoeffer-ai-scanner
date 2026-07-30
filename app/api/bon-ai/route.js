@@ -9,7 +9,10 @@ import {
   getProducts
 } from "@/lib/salesforce/api";
 
-import { getTopOpportunitiesSummary } from "@/lib/bonai/business";
+import {
+  getTopOpportunitiesSummary,
+  getMonthlyBusinessSummary,
+} from "@/lib/bonai/business";
 
 const genAI = new GoogleGenerativeAI(
   process.env.GEMINI_API_KEY
@@ -1144,11 +1147,11 @@ case "TOP_INTERNATIONAL_OPPORTUNITIES": {
 }
 
 case "MONTHLY_BUSINESS": {
+  const summary = await getMonthlyBusinessSummary(accessToken);
 
   return Response.json({
-    reply: "Monthly Business feature is under development."
+    reply: summary,
   });
-
 }
 
 // ==========================================
