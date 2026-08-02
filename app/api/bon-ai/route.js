@@ -11,7 +11,7 @@ import {
 
 import {
   getTopOpportunitiesSummary,
-  getMonthlyBusinessSummary,
+  getBusinessAnalyticsSummary,
 } from "@/lib/bonai/business";
 
 const genAI = new GoogleGenerativeAI(
@@ -111,6 +111,7 @@ function findProduct(text) {
 function detectIntent(message) {
 
   const query = normalize(message);
+  console.log("QUERY:", query);
 
   if (
     query.includes(" vs ") ||
@@ -277,6 +278,50 @@ if (
   return "MONTHLY_BUSINESS";
 }
 
+// ==========================================
+// DOMESTIC CLOSED WON
+// ==========================================
+
+if (
+  query.includes("domestic closed won") ||
+  query.includes("domestic business") ||
+  query.includes("domestic sales")
+) {
+  return "DOMESTIC_CLOSED_WON";
+}
+
+// ==========================================
+// INTERNATIONAL CLOSED WON
+// ==========================================
+
+if (
+  query.includes("international closed won") ||
+  query.includes("international business") ||
+  query.includes("international sales")
+) {
+  return "INTERNATIONAL_CLOSED_WON";
+}
+
+// ==========================================
+// DOMESTIC PIPELINE
+// ==========================================
+
+if (
+  query.includes("domestic pipeline")
+) {
+  return "DOMESTIC_PIPELINE";
+}
+
+// ==========================================
+// INTERNATIONAL PIPELINE
+// ==========================================
+
+if (
+  query.includes("international pipeline")
+) {
+  return "INTERNATIONAL_PIPELINE";
+}
+
 if (
   query.includes("dashboard")
 ) {
@@ -321,6 +366,11 @@ export async function POST(req) {
     }
 
     const intent = detectIntent(message);
+
+    console.log("MESSAGE:", message);
+console.log("INTENT:", intent);
+
+    console.log("Detected Intent:", intent);
 
     console.log("Detected Intent =", intent);
 
@@ -1146,11 +1196,43 @@ case "TOP_INTERNATIONAL_OPPORTUNITIES": {
 
 }
 
-case "MONTHLY_BUSINESS": {
-  const summary = await getMonthlyBusinessSummary(accessToken);
-
+case "DOMESTIC_CLOSED_WON": {
   return Response.json({
-    reply: summary,
+    reply: await getBusinessAnalyticsSummary(
+      accessToken,
+      "Domestic",
+      "CLOSED_WON"
+    ),
+  });
+}
+
+case "INTERNATIONAL_CLOSED_WON": {
+  return Response.json({
+    reply: await getBusinessAnalyticsSummary(
+      accessToken,
+      "International",
+      "CLOSED_WON"
+    ),
+  });
+}
+
+case "DOMESTIC_PIPELINE": {
+  return Response.json({
+    reply: await getBusinessAnalyticsSummary(
+      accessToken,
+      "Domestic",
+      "PIPELINE"
+    ),
+  });
+}
+
+case "INTERNATIONAL_PIPELINE": {
+  return Response.json({
+    reply: await getBusinessAnalyticsSummary(
+      accessToken,
+      "International",
+      "PIPELINE"
+    ),
   });
 }
 
