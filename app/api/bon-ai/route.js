@@ -111,6 +111,26 @@ function findProduct(text) {
 function detectIntent(message) {
 
   const query = normalize(message);
+  let salesperson = null;
+
+const users = [
+  "manoj uniyal",
+  "aryan maurya",
+  "shivchandra kumar",
+  "vijay tank",
+  "anil kumar das",
+  "lalit kumar",
+  "nirupam deb roy",
+  "nelandra kumar sinha",
+  "vasanta raj"
+];
+
+for (const user of users) {
+  if (query.includes(user)) {
+    salesperson = user;
+    break;
+  }
+}
   console.log("QUERY:", query);
 
   if (
@@ -334,7 +354,87 @@ if (
 ) {
   return "REPORT";
 }
-  return "GEMINI";
+  const salesQuery = parseSalesQuery(message);
+
+if (salesQuery) {
+  return "SALES_QUERY";
+}
+
+return "GEMINI";
+}
+
+// ==========================================
+// SALES QUERY PARSER
+// ==========================================
+
+function parseSalesQuery(message) {
+
+  const query = normalize(message);
+
+  // ==========================================
+  // SALESPERSON
+  // ==========================================
+
+  let salesperson = null;
+
+  const users = [
+    "manoj uniyal",
+    "aryan maurya",
+    "shivchandra kumar",
+    "vijay tank",
+    "anil kumar das",
+    "lalit kumar",
+    "nirupam deb roy",
+    "nelandra kumar sinha",
+    "vasanta raj"
+  ];
+
+  for (const user of users) {
+    if (query.includes(user)) {
+      salesperson = user;
+      break;
+    }
+  }
+
+  // ==========================================
+  // PERIOD
+  // ==========================================
+
+  let period = "THIS_MONTH";
+
+  if (query.includes("last month")) {
+    period = "LAST_MONTH";
+  } else if (query.includes("this month")) {
+    period = "THIS_MONTH";
+  }
+
+  // ==========================================
+  // METRIC
+  // ==========================================
+
+  let metric = "AMOUNT";
+
+  if (query.includes("pipeline")) {
+    metric = "PIPELINE";
+  } else if (
+    query.includes("closed won") ||
+    query.includes("sales") ||
+    query.includes("business")
+  ) {
+    metric = "CLOSED_WON";
+  }
+
+  // ==========================================
+  // RETURN
+  // ==========================================
+
+  return {
+    salesperson,
+    period,
+    metric,
+    query,
+  };
+
 }
 
 // ==========================================
@@ -378,6 +478,70 @@ console.log("Message:", message);
 console.log("Detected Intent:", intent);
 
 switch (intent) {
+
+  case "SALES_QUERY": {
+
+  if (!accessToken) {
+    return Response.json({
+      reply: "Please login to Salesforce first."
+    });
+  }
+
+  try {
+
+    const parsed = parseSalesQuery(message);
+
+    let recordType = "Domestic";
+
+    if (parsed.query.includes("international")) {
+      recordType = "International";
+    }
+
+    const opportunities = await getBusinessSummary(
+      accessToken,
+      recordType,
+      parsed.metric,
+      parsed.period,
+      parsed.salesperson
+    );
+
+    if (!opportunities.length) {
+      return Response.json({
+        reply: "No matching opportunities found."
+      });
+    }
+
+    const totalAmount = opportunities.reduce(
+      (sum, opp) => sum + (opp.Amount || 0),
+      0
+    );
+
+    let reply = "";
+
+    if (parsed.salesperson) {
+      reply += `👤 Salesperson : ${parsed.salesperson}\n`;
+    }
+
+    reply += `📅 Period : ${parsed.period.replace("_"," ")}\n`;
+    reply += `📂 Record Type : ${recordType}\n`;
+    reply += `💰 Total Sales : ₹${totalAmount.toLocaleString()}\n`;
+    reply += `📦 Opportunities : ${opportunities.length}`;
+
+    return Response.json({
+      reply
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    return Response.json({
+      reply: "Failed to fetch Salesforce data."
+    });
+
+  }
+
+}
       case "MY_LEADS": {
 
   if (!accessToken) {
