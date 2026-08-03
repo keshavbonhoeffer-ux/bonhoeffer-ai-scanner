@@ -6,7 +6,8 @@ import {
   getAccounts,
   getOpportunities,
   getTopOpportunities,
-  getProducts
+  getProducts,
+  getBusinessSummary
 } from "@/lib/salesforce/api";
 
 import {
