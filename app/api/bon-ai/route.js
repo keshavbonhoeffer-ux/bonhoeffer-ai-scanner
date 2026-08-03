@@ -533,13 +533,13 @@ switch (intent) {
 
   } catch (error) {
 
-    console.error(error);
+  console.error("SALES QUERY ERROR:", error);
 
-    return Response.json({
-      reply: "Failed to fetch Salesforce data."
-    });
+  return Response.json({
+    reply: error.message || JSON.stringify(error)
+  });
 
-  }
+}
 
 }
       case "MY_LEADS": {
