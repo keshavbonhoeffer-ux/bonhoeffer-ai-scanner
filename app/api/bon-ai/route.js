@@ -560,6 +560,13 @@ console.log("Record Type:", recordType);
 console.log("Metric:", parsed.metric);
 console.log("Period:", parsed.period);
 console.log("================================");
+console.log("***** ENTERING getBusinessSummary *****");
+console.log({
+  salesperson: parsed.salesperson,
+  recordType,
+  metric: parsed.metric,
+  period: parsed.period,
+});
     const opportunities = await getBusinessSummary(
   accessToken,
   instanceUrl,
