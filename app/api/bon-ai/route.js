@@ -1312,9 +1312,10 @@ case "TOP_DOMESTIC_OPPORTUNITIES": {
   try {
 
     const reply = await getTopOpportunitiesSummary(
-      accessToken,
-      "Domestic"
-    );
+  accessToken,
+  instanceUrl,
+  "Domestic"
+);
 
     return Response.json({
       reply
@@ -1345,9 +1346,10 @@ case "TOP_INTERNATIONAL_OPPORTUNITIES": {
   try {
 
     const reply = await getTopOpportunitiesSummary(
-      accessToken,
-      "International"
-    );
+  accessToken,
+  instanceUrl,
+  "International"
+);
 
     return Response.json({
       reply
@@ -1368,20 +1370,22 @@ case "TOP_INTERNATIONAL_OPPORTUNITIES": {
 case "DOMESTIC_CLOSED_WON": {
   return Response.json({
     reply: await getBusinessAnalyticsSummary(
-      accessToken,
-      "Domestic",
-      "CLOSED_WON"
-    ),
+  accessToken,
+  instanceUrl,
+  "Domestic",
+  "CLOSED_WON"
+),
   });
 }
 
 case "INTERNATIONAL_CLOSED_WON": {
   return Response.json({
     reply: await getBusinessAnalyticsSummary(
-      accessToken,
-      "International",
-      "CLOSED_WON"
-    ),
+  accessToken,
+  instanceUrl,
+  "International",
+  "CLOSED_WON"
+),
   });
 }
 
