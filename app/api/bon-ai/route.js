@@ -547,6 +547,19 @@ console.log("Period:", parsed.period);
       recordType = "International";
     }
 
+console.log("========================");
+console.log("Parsed Query:", parsed);
+console.log("Salesperson:", parsed.salesperson);
+console.log("Metric:", parsed.metric);
+console.log("Period:", parsed.period);
+console.log("Record Type:", recordType);
+console.log("========================");
+console.log("================================");
+console.log("Salesperson:", parsed.salesperson);
+console.log("Record Type:", recordType);
+console.log("Metric:", parsed.metric);
+console.log("Period:", parsed.period);
+console.log("================================");
     const opportunities = await getBusinessSummary(
   accessToken,
   instanceUrl,
