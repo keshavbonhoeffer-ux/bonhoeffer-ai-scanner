@@ -499,12 +499,13 @@ switch (intent) {
     }
 
     const opportunities = await getBusinessSummary(
-      accessToken,
-      recordType,
-      parsed.metric,
-      parsed.period,
-      parsed.salesperson
-    );
+  accessToken,
+  instanceUrl,
+  recordType,
+  parsed.metric,
+  parsed.period,
+  parsed.salesperson
+);
 
     if (!opportunities.length) {
       return Response.json({
