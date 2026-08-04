@@ -554,7 +554,10 @@ switch (intent) {
 
   try {
 
-    const leads = await getLeads(accessToken);
+    const leads = await getLeads(
+  accessToken,
+  instanceUrl
+);
 
     if (!leads || leads.length === 0) {
       return Response.json({
