@@ -492,6 +492,10 @@ switch (intent) {
 
     const parsed = parseSalesQuery(message);
 
+    console.log("Parsed Query:", parsed);
+console.log("Salesperson:", parsed.salesperson);
+console.log("Period:", parsed.period);
+
     let recordType = "Domestic";
 
     if (parsed.query.includes("international")) {
