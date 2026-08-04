@@ -379,23 +379,68 @@ function parseSalesQuery(message) {
   let salesperson = null;
 
   const users = [
-    "manoj uniyal",
-    "aryan maurya",
-    "shivchandra kumar",
-    "vijay tank",
-    "anil kumar das",
-    "lalit kumar",
-    "nirupam deb roy",
-    "nelandra kumar sinha",
-    "vasanta raj"
-  ];
+  "ahmad bashir",
+  "homaid ansari",
+  "antonio jara correa rodrigo",
+  "sourav bardhan",
+  "dipak chand",
+  "sudip das",
+  "nirupam deb roy",
+  "wilfredo vega",
+  "varun gupta",
+  "susanta jena",
+  "akshay kasana",
+  "deepak kaushik",
+  "shadab khan",
+  "anil kumar das",
+  "vinod kumar m",
+  "lalit kumar",
+  "shivchandra kumar",
+  "aryan maurya",
+  "eduardo mendes",
+  "sudhanshu pandey",
+  "miguel pardo",
+  "shaik rafi",
+  "vasanta raj",
+  "keshav ranjan",
+  "prakash ranjan",
+  "rafael romero alvarez",
+  "lokesh roul",
+  "rajat sahni",
+  "satish sharma",
+  "ravi singh",
+  "nelandra sinha",
+  "vijay tank",
+  "ashwin tharoor",
+  "manoj uniyal"
+];
 
   for (const user of users) {
-    if (query.includes(user)) {
-      salesperson = user;
+
+  const fullName = user.toLowerCase();
+  const parts = fullName.split(" ");
+
+  if (query.includes(fullName)) {
+    salesperson = fullName;
+    break;
+  }
+
+  if (parts.length >= 2) {
+
+    const firstName = parts[0];
+    const lastName = parts[parts.length - 1];
+
+    if (
+      query.includes(firstName) ||
+      query.includes(lastName)
+    ) {
+      salesperson = fullName;
       break;
     }
+
   }
+
+}
 
   // ==========================================
   // PERIOD
