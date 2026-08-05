@@ -562,6 +562,12 @@ switch (intent) {
 
     const parsed = parseSalesQuery(message);
 
+console.log("================================");
+console.log("Parsed Object:");
+console.log(parsed);
+console.log("Selected Month:", parsed.selectedMonth);
+console.log("================================");
+
     console.log("Parsed Query:", parsed);
 console.log("Salesperson:", parsed.salesperson);
 console.log("Period:", parsed.period);
