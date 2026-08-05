@@ -591,6 +591,7 @@ console.log({
   recordType,
   metric: parsed.metric,
   period: parsed.period,
+  selectedMonth: parsed.selectedMonth,
 });
     const opportunities = await getBusinessSummary(
   accessToken,
