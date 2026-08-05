@@ -1472,22 +1472,28 @@ case "TOP_INTERNATIONAL_OPPORTUNITIES": {
 case "DOMESTIC_CLOSED_WON": {
   return Response.json({
     reply: await getBusinessAnalyticsSummary(
-  accessToken,
-  instanceUrl,
-  "Domestic",
-  "CLOSED_WON"
-),
+      accessToken,
+      instanceUrl,
+      "Domestic",
+      "CLOSED_WON",
+      parsed.period,
+      parsed.salesperson,
+      parsed.selectedMonth
+    ),
   });
 }
 
 case "INTERNATIONAL_CLOSED_WON": {
   return Response.json({
     reply: await getBusinessAnalyticsSummary(
-  accessToken,
-  instanceUrl,
-  "International",
-  "CLOSED_WON"
-),
+      accessToken,
+      instanceUrl,
+      "International",
+      "CLOSED_WON",
+      parsed.period,
+      parsed.salesperson,
+      parsed.selectedMonth
+    ),
   });
 }
 
@@ -1495,8 +1501,12 @@ case "DOMESTIC_PIPELINE": {
   return Response.json({
     reply: await getBusinessAnalyticsSummary(
       accessToken,
+      instanceUrl,
       "Domestic",
-      "PIPELINE"
+      "PIPELINE",
+      parsed.period,
+      parsed.salesperson,
+      parsed.selectedMonth
     ),
   });
 }
@@ -1505,8 +1515,12 @@ case "INTERNATIONAL_PIPELINE": {
   return Response.json({
     reply: await getBusinessAnalyticsSummary(
       accessToken,
+      instanceUrl,
       "International",
-      "PIPELINE"
+      "PIPELINE",
+      parsed.period,
+      parsed.salesperson,
+      parsed.selectedMonth
     ),
   });
 }
