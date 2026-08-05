@@ -442,6 +442,30 @@ function parseSalesQuery(message) {
 
 }
 
+const MONTHS = {
+  january: 1,
+  february: 2,
+  march: 3,
+  april: 4,
+  may: 5,
+  june: 6,
+  july: 7,
+  august: 8,
+  september: 9,
+  october: 10,
+  november: 11,
+  december: 12,
+};
+
+let selectedMonth = null;
+
+for (const month in MONTHS) {
+  if (query.includes(month)) {
+    selectedMonth = MONTHS[month];
+    break;
+  }
+}
+
   // ==========================================
   // PERIOD
   // ==========================================
@@ -475,11 +499,12 @@ function parseSalesQuery(message) {
   // ==========================================
 
   return {
-    salesperson,
-    period,
-    metric,
-    query,
-  };
+  query,
+  salesperson,
+  metric,
+  period,
+  selectedMonth
+};
 
 }
 
@@ -573,7 +598,8 @@ console.log({
   recordType,
   parsed.metric,
   parsed.period,
-  parsed.salesperson
+  parsed.salesperson,
+  parsed.selectedMonth
 );
 
     if (!opportunities.length) {
