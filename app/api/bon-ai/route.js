@@ -237,6 +237,44 @@ if (
 // ===============================
 
 // ==========================================
+// SALES QUERY (MUST COME FIRST)
+// ==========================================
+
+const months = [
+  "january",
+  "february",
+  "march",
+  "april",
+  "may",
+  "june",
+  "july",
+  "august",
+  "september",
+  "october",
+  "november",
+  "december",
+];
+
+const hasMonth = months.some(month => query.includes(month));
+
+const hasSalesperson = users.some(user => query.includes(user));
+
+if (
+  hasMonth ||
+  hasSalesperson ||
+  query.includes("this month") ||
+  query.includes("last month") ||
+  query.includes("today") ||
+  query.includes("yesterday") ||
+  query.includes("closed won") ||
+  query.includes("pipeline") ||
+  query.includes("business") ||
+  query.includes("sales")
+) {
+  return "SALES_QUERY";
+}
+
+// ==========================================
 // TOP OPPORTUNITIES
 // ==========================================
 
