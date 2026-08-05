@@ -1475,10 +1475,7 @@ case "DOMESTIC_CLOSED_WON": {
       accessToken,
       instanceUrl,
       "Domestic",
-      "CLOSED_WON",
-      parsed.period,
-      parsed.salesperson,
-      parsed.selectedMonth
+      "CLOSED_WON"
     ),
   });
 }
@@ -1489,10 +1486,7 @@ case "INTERNATIONAL_CLOSED_WON": {
       accessToken,
       instanceUrl,
       "International",
-      "CLOSED_WON",
-      parsed.period,
-      parsed.salesperson,
-      parsed.selectedMonth
+      "CLOSED_WON"
     ),
   });
 }
@@ -1503,10 +1497,7 @@ case "DOMESTIC_PIPELINE": {
       accessToken,
       instanceUrl,
       "Domestic",
-      "PIPELINE",
-      parsed.period,
-      parsed.salesperson,
-      parsed.selectedMonth
+      "PIPELINE"
     ),
   });
 }
@@ -1517,10 +1508,7 @@ case "INTERNATIONAL_PIPELINE": {
       accessToken,
       instanceUrl,
       "International",
-      "PIPELINE",
-      parsed.period,
-      parsed.salesperson,
-      parsed.selectedMonth
+      "PIPELINE"
     ),
   });
 }
