@@ -552,6 +552,8 @@ for (const month in MONTHS) {
 
 export async function POST(req) {
 
+  console.log("🚨 ROUTE VERSION: AUG-05 TEST");
+
   try {
 
     const {
