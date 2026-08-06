@@ -431,7 +431,7 @@ function parseSalesQuery(message) {
   "deepak kaushik",
   "shadab khan",
   "anil kumar das",
-  "vinod kumar m",
+  "vinodh kumar m",
   "lalit kumar",
   "shivchandra kumar",
   "aryan maurya",
