@@ -699,9 +699,13 @@ console.log("Period:", parsed.period);
 
     let recordType = "Domestic";
 
-    if (parsed.query.includes("international")) {
-      recordType = "International";
-    }
+if (
+  parsed.query.includes("international") ||
+  parsed.salesperson === "deepak kaushik" ||
+  parsed.salesperson === "ashwin tharoor"
+) {
+  recordType = "International";
+}
 
 console.log("========================");
 console.log("Parsed Query:", parsed);
