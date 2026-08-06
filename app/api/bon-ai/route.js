@@ -116,6 +116,8 @@ function detectIntent(message) {
 
 const users = [
   { queryName: "ahmad bashir", salesforceName: "ahmad bashir" },
+  { queryName: "bashir ahmad", salesforceName: "ahmad bashir" },
+
   { queryName: "homaid ansari", salesforceName: "homaid ansari" },
   { queryName: "antonio jara correa rodrigo", salesforceName: "antonio jara correa rodrigo" },
   { queryName: "sourav bardhan", salesforceName: "sourav bardhan" },
@@ -127,14 +129,17 @@ const users = [
   { queryName: "susanta jena", salesforceName: "susanta jena" },
   { queryName: "akshay kasana", salesforceName: "akshay kasana" },
 
-  // Accept both spellings
+  // Deepak / Dipak
   { queryName: "deepak kaushik", salesforceName: "deepak kaushik" },
   { queryName: "dipak kaushik", salesforceName: "deepak kaushik" },
 
   { queryName: "shadab khan", salesforceName: "shadab khan" },
   { queryName: "anil kumar das", salesforceName: "anil kumar das" },
+
+  // Vinod / Vinodh
   { queryName: "vinodh kumar m", salesforceName: "vinodh kumar m" },
   { queryName: "vinod kumar m", salesforceName: "vinodh kumar m" },
+
   { queryName: "lalit kumar", salesforceName: "lalit kumar" },
   { queryName: "shivchandra kumar", salesforceName: "shivchandra kumar" },
   { queryName: "aryan maurya", salesforceName: "aryan maurya" },
@@ -150,16 +155,47 @@ const users = [
   { queryName: "rajat sahni", salesforceName: "rajat sahni" },
   { queryName: "satish sharma", salesforceName: "satish sharma" },
   { queryName: "ravi singh", salesforceName: "ravi singh" },
+
+  // Nelandra
   { queryName: "nelandra sinha", salesforceName: "nelandra sinha" },
+  { queryName: "nelandra kumar sinha", salesforceName: "nelandra sinha" },
+
   { queryName: "vijay tank", salesforceName: "vijay tank" },
   { queryName: "ashwin tharoor", salesforceName: "ashwin tharoor" },
   { queryName: "manoj uniyal", salesforceName: "manoj uniyal" }
 ];
 
 for (const user of users) {
-  if (query.includes(user.queryName)) {
+
+  const fullName = user.queryName.toLowerCase();
+  const parts = fullName.split(" ");
+
+  // Exact match
+  if (query.includes(fullName)) {
     salesperson = user.salesforceName;
     break;
+  }
+
+  // First + Last name match
+  if (parts.length >= 2) {
+
+    const firstName = parts[0];
+    const lastName = parts[parts.length - 1];
+
+    if (query.includes(firstName + " " + lastName)) {
+      salesperson = user.salesforceName;
+      break;
+    }
+
+    // First name only
+    if (
+      query === firstName ||
+      query.startsWith(firstName + " ") ||
+      query.endsWith(" " + firstName)
+    ) {
+      salesperson = user.salesforceName;
+      break;
+    }
   }
 }
 
