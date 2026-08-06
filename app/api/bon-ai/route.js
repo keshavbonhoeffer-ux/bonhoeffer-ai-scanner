@@ -158,7 +158,7 @@ const users = [
 
   // Nelandra
   { queryName: "nelandra sinha", salesforceName: "nelandra sinha" },
-  { queryName: "nelandra kumar sinha", salesforceName: "nelandra sinha" },
+  { queryName: "nelandra sinha", salesforceName: "nelandra sinha" },
 
   { queryName: "vijay tank", salesforceName: "vijay tank" },
   { queryName: "ashwin tharoor", salesforceName: "ashwin tharoor" },
@@ -529,8 +529,8 @@ function parseSalesQuery(message) {
   { queryName: "satish sharma", salesforceName: "satish sharma" },
   { queryName: "ravi singh", salesforceName: "ravi singh" },
 
-  { queryName: "nelandra sinha", salesforceName: "Nelandra Kumar Sinha" },
-{ queryName: "nelandra kumar sinha", salesforceName: "Nelandra Kumar Sinha" },
+  { queryName: "nelandra sinha", salesforceName: "Nelandra Sinha" },
+{ queryName: "nelandra sinha", salesforceName: "Nelandra Sinha" },
 
   { queryName: "vijay tank", salesforceName: "vijay tank" },
   { queryName: "ashwin tharoor", salesforceName: "ashwin tharoor" },
