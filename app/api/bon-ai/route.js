@@ -578,6 +578,10 @@ export async function POST(req) {
 
     const intent = detectIntent(message);
 
+    console.log("==========");
+console.log("INTENT:", intent);
+console.log("==========");
+
     console.log("MESSAGE:", message);
 console.log("INTENT:", intent);
 
@@ -601,6 +605,8 @@ switch (intent) {
   try {
 
     const parsed = parseSalesQuery(message);
+
+    console.log("PARSED:", parsed);
 
 console.log("================================");
 console.log("Parsed Object:");
