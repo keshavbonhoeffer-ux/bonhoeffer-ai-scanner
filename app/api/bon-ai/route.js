@@ -469,12 +469,17 @@ function parseSalesQuery(message) {
     const lastName = parts[parts.length - 1];
 
     if (
-      query.includes(firstName) ||
-      query.includes(lastName)
-    ) {
-      salesperson = fullName;
-      break;
-    }
+  query.includes(` ${firstName} `) ||
+  query.startsWith(firstName + " ") ||
+  query.endsWith(" " + firstName) ||
+
+  query.includes(` ${lastName} `) ||
+  query.startsWith(lastName + " ") ||
+  query.endsWith(" " + lastName)
+) {
+  salesperson = fullName;
+  break;
+}
 
   }
 
