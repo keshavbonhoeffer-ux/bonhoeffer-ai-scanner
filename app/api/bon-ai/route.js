@@ -465,25 +465,30 @@ function parseSalesQuery(message) {
 
   if (parts.length >= 2) {
 
-    const firstName = parts[0];
-    const lastName = parts[parts.length - 1];
+  const firstName = parts[0];
+  const lastName = parts[parts.length - 1];
 
-    if (
-  query.includes(` ${firstName} `) ||
-  query.startsWith(firstName + " ") ||
-  query.endsWith(" " + firstName) ||
+  // Match full first + last
+  if (
+    query.includes(firstName + " " + lastName)
+  ) {
+    salesperson = fullName;
+    break;
+  }
 
-  query.includes(` ${lastName} `) ||
-  query.startsWith(lastName + " ") ||
-  query.endsWith(" " + lastName)
-) {
-  salesperson = fullName;
-  break;
-}
-
+  // Match only first name
+  if (
+    query.startsWith(firstName + " ") ||
+    query.endsWith(" " + firstName) ||
+    query === firstName
+  ) {
+    salesperson = fullName;
+    break;
   }
 
 }
+
+} // <-- closes the for (const user of users) loop
 
 const MONTHS = {
   january: 1,
