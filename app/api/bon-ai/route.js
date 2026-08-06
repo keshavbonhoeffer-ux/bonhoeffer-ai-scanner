@@ -456,12 +456,45 @@ function parseSalesQuery(message) {
 
   for (const user of users) {
 
-  let salesforceName = fullName;
+  const fullName = user.toLowerCase();
+
+let salesforceName = fullName;
 
 if (fullName === "dipak kaushik") {
   salesforceName = "deepak kaushik";
 }
-  const parts = fullName.split(" ");
+
+const parts = fullName.split(" ");
+
+if (query.includes(fullName)) {
+  salesperson = salesforceName;
+  break;
+}
+
+if (parts.length >= 2) {
+
+  const firstName = parts[0];
+  const lastName = parts[parts.length - 1];
+
+  // Match full first + last
+  if (
+    query.includes(firstName + " " + lastName)
+  ) {
+    salesperson = salesforceName;
+    break;
+  }
+
+  // Match only first name
+  if (
+    query.startsWith(firstName + " ") ||
+    query.endsWith(" " + firstName) ||
+    query === firstName
+  ) {
+    salesperson = salesforceName;
+    break;
+  }
+
+}
 
   if (query.includes(fullName)) {
     salesperson = salesforceName;
