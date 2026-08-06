@@ -677,7 +677,27 @@ console.log({
       reply += `👤 Salesperson : ${parsed.salesperson}\n`;
     }
 
-    reply += `📅 Period : ${parsed.period.replace("_"," ")}\n`;
+    const monthNames = [
+  "",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
+if (parsed.selectedMonth) {
+  reply += `📅 Month : ${monthNames[parsed.selectedMonth]}\n`;
+} else {
+  reply += `📅 Period : ${parsed.period.replaceAll("_", " ")}\n`;
+}
     reply += `📂 Record Type : ${recordType}\n`;
     reply += `💰 Total Sales : ₹${totalAmount.toLocaleString()}\n`;
     reply += `📦 Opportunities : ${opportunities.length}`;
