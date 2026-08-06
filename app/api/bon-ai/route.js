@@ -704,7 +704,11 @@ if (parsed.selectedMonth) {
   reply += `📅 Period : ${parsed.period.replaceAll("_", " ")}\n`;
 }
     reply += `📂 Record Type : ${recordType}\n`;
-    reply += `💰 Total Sales : ₹${totalAmount.toLocaleString()}\n`;
+    reply += `💰 Total Sales : ${
+  recordType === "International"
+    ? `USD ${totalAmount.toLocaleString()}`
+    : `₹${totalAmount.toLocaleString()}`
+}\n`;
     reply += `📦 Opportunities : ${opportunities.length}`;
 
     return Response.json({
