@@ -429,6 +429,7 @@ function parseSalesQuery(message) {
   "susanta jena",
   "akshay kasana",
   "deepak kaushik",
+"dipak kaushik",
   "shadab khan",
   "anil kumar das",
   "vinodh kumar m",
@@ -455,11 +456,15 @@ function parseSalesQuery(message) {
 
   for (const user of users) {
 
-  const fullName = user.toLowerCase();
+  let salesforceName = fullName;
+
+if (fullName === "dipak kaushik") {
+  salesforceName = "deepak kaushik";
+}
   const parts = fullName.split(" ");
 
   if (query.includes(fullName)) {
-    salesperson = fullName;
+    salesperson = salesforceName;
     break;
   }
 
@@ -472,7 +477,7 @@ function parseSalesQuery(message) {
   if (
     query.includes(firstName + " " + lastName)
   ) {
-    salesperson = fullName;
+    salesperson = salesforceName;
     break;
   }
 
@@ -482,7 +487,7 @@ function parseSalesQuery(message) {
     query.endsWith(" " + firstName) ||
     query === firstName
   ) {
-    salesperson = fullName;
+    salesperson = salesforceName;
     break;
   }
 
