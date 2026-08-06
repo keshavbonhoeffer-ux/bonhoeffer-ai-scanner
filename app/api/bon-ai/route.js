@@ -115,24 +115,55 @@ function detectIntent(message) {
   let salesperson = null;
 
 const users = [
-  "manoj uniyal",
-  "aryan maurya",
-  "shivchandra kumar",
-  "vijay tank",
-  "anil kumar das",
-  "lalit kumar",
-  "nirupam deb roy",
-  "nelandra kumar sinha",
-  "vasanta raj"
+  { queryName: "ahmad bashir", salesforceName: "ahmad bashir" },
+  { queryName: "homaid ansari", salesforceName: "homaid ansari" },
+  { queryName: "antonio jara correa rodrigo", salesforceName: "antonio jara correa rodrigo" },
+  { queryName: "sourav bardhan", salesforceName: "sourav bardhan" },
+  { queryName: "dipak chand", salesforceName: "dipak chand" },
+  { queryName: "sudip das", salesforceName: "sudip das" },
+  { queryName: "nirupam deb roy", salesforceName: "nirupam deb roy" },
+  { queryName: "wilfredo vega", salesforceName: "wilfredo vega" },
+  { queryName: "varun gupta", salesforceName: "varun gupta" },
+  { queryName: "susanta jena", salesforceName: "susanta jena" },
+  { queryName: "akshay kasana", salesforceName: "akshay kasana" },
+
+  // Accept both spellings
+  { queryName: "deepak kaushik", salesforceName: "deepak kaushik" },
+  { queryName: "dipak kaushik", salesforceName: "deepak kaushik" },
+
+  { queryName: "shadab khan", salesforceName: "shadab khan" },
+  { queryName: "anil kumar das", salesforceName: "anil kumar das" },
+  { queryName: "vinodh kumar m", salesforceName: "vinodh kumar m" },
+  { queryName: "vinod kumar m", salesforceName: "vinodh kumar m" },
+  { queryName: "lalit kumar", salesforceName: "lalit kumar" },
+  { queryName: "shivchandra kumar", salesforceName: "shivchandra kumar" },
+  { queryName: "aryan maurya", salesforceName: "aryan maurya" },
+  { queryName: "eduardo mendes", salesforceName: "eduardo mendes" },
+  { queryName: "sudhanshu pandey", salesforceName: "sudhanshu pandey" },
+  { queryName: "miguel pardo", salesforceName: "miguel pardo" },
+  { queryName: "shaik rafi", salesforceName: "shaik rafi" },
+  { queryName: "vasanta raj", salesforceName: "vasanta raj" },
+  { queryName: "keshav ranjan", salesforceName: "keshav ranjan" },
+  { queryName: "prakash ranjan", salesforceName: "prakash ranjan" },
+  { queryName: "rafael romero alvarez", salesforceName: "rafael romero alvarez" },
+  { queryName: "lokesh roul", salesforceName: "lokesh roul" },
+  { queryName: "rajat sahni", salesforceName: "rajat sahni" },
+  { queryName: "satish sharma", salesforceName: "satish sharma" },
+  { queryName: "ravi singh", salesforceName: "ravi singh" },
+  { queryName: "nelandra sinha", salesforceName: "nelandra sinha" },
+  { queryName: "vijay tank", salesforceName: "vijay tank" },
+  { queryName: "ashwin tharoor", salesforceName: "ashwin tharoor" },
+  { queryName: "manoj uniyal", salesforceName: "manoj uniyal" }
 ];
 
 for (const user of users) {
-  if (query.includes(user)) {
-    salesperson = user;
+  if (query.includes(user.queryName)) {
+    salesperson = user.salesforceName;
     break;
   }
 }
-  console.log("QUERY:", query);
+
+console.log("QUERY:", query);
 
   if (
     query.includes(" vs ") ||
