@@ -490,8 +490,8 @@ function parseSalesQuery(message) {
   let salesperson = null;
 
   const users = [
-  { queryName: "ahmad bashir", salesforceName: "ahmad bashir" },
-  { queryName: "bashir ahmad", salesforceName: "ahmad bashir" },
+ { queryName: "ahmad bashir", salesforceName: "Bashir Ahmad" },
+{ queryName: "bashir ahmad", salesforceName: "Bashir Ahmad" },
 
   { queryName: "homaid ansari", salesforceName: "homaid ansari" },
   { queryName: "antonio jara correa rodrigo", salesforceName: "antonio jara correa rodrigo" },
@@ -529,8 +529,8 @@ function parseSalesQuery(message) {
   { queryName: "satish sharma", salesforceName: "satish sharma" },
   { queryName: "ravi singh", salesforceName: "ravi singh" },
 
-  { queryName: "nelandra sinha", salesforceName: "nelandra sinha" },
-  { queryName: "nelandra kumar sinha", salesforceName: "nelandra sinha" },
+  { queryName: "nelandra sinha", salesforceName: "Nelandra Kumar Sinha" },
+{ queryName: "nelandra kumar sinha", salesforceName: "Nelandra Kumar Sinha" },
 
   { queryName: "vijay tank", salesforceName: "vijay tank" },
   { queryName: "ashwin tharoor", salesforceName: "ashwin tharoor" },
