@@ -173,6 +173,7 @@ for (const user of users) {
   // Exact match
   if (query.includes(fullName)) {
     salesperson = user.salesforceName;
+    console.log("✅ Exact Match:", fullName, "=>", salesperson);
     break;
   }
 
@@ -184,6 +185,7 @@ for (const user of users) {
 
     if (query.includes(firstName + " " + lastName)) {
       salesperson = user.salesforceName;
+      console.log("✅ First + Last Match:", firstName + " " + lastName, "=>", salesperson);
       break;
     }
 
@@ -194,80 +196,84 @@ for (const user of users) {
       query.endsWith(" " + firstName)
     ) {
       salesperson = user.salesforceName;
+      console.log("✅ First Name Match:", firstName, "=>", salesperson);
       break;
     }
   }
 }
 
-console.log("QUERY:", query);
+console.log("================================");
+console.log("Original Query:", query);
+console.log("Matched Salesperson:", salesperson);
+console.log("================================");
 
-  if (
-    query.includes(" vs ") ||
-    query.includes(" compare ") ||
-    query.includes("difference") ||
-    query.includes("better than")
-  ) {
-    return "COMPARE";
-  }
+if (
+  query.includes(" vs ") ||
+  query.includes(" compare ") ||
+  query.includes("difference") ||
+  query.includes("better than")
+) {
+  return "COMPARE";
+}
 
-  if (
-    query.includes("recommend") ||
-    query.includes("suggest") ||
-    query.includes("best for") ||
-    query.includes("which model") ||
-    query.includes("which machine")
-  ) {
-    return "RECOMMEND";
-  }
+if (
+  query.includes("recommend") ||
+  query.includes("suggest") ||
+  query.includes("best for") ||
+  query.includes("which model") ||
+  query.includes("which machine")
+) {
+  return "RECOMMEND";
+}
 
-  if (
-    query.includes("accessories") ||
-    query.includes("accessory")
-  ) {
-    return "ACCESSORIES";
-  }
+if (
+  query.includes("accessories") ||
+  query.includes("accessory")
+) {
+  return "ACCESSORIES";
+}
 
-  if (
-    query.includes("spare part") ||
-    query.includes("spare parts")
-  ) {
-    return "SPARE_PARTS";
-  }
+if (
+  query.includes("spare part") ||
+  query.includes("spare parts")
+) {
+  return "SPARE_PARTS";
+}
 
-  if (
-    query.includes("maintenance") ||
-    query.includes("service")
-  ) {
-    return "MAINTENANCE";
-  }
+if (
+  query.includes("maintenance") ||
+  query.includes("service")
+) {
+  return "MAINTENANCE";
+}
 
-  if (
-    query.includes("warranty")
-  ) {
-    return "WARRANTY";
-  }
+if (
+  query.includes("warranty")
+) {
+  return "WARRANTY";
+}
 
-  if (
-    query.includes("safety") ||
-    query.includes("ppe")
-  ) {
-    return "SAFETY";
-  }
+if (
+  query.includes("safety") ||
+  query.includes("ppe")
+) {
+  return "SAFETY";
+}
 
-  if (
-    query.includes("faq") ||
-    query.startsWith("can ") ||
-    query.startsWith("does ") ||
-    query.startsWith("is ")
-  ) {
-    return "FAQ";
-  }
+if (
+  query.includes("faq") ||
+  query.startsWith("can ") ||
+  query.startsWith("does ") ||
+  query.startsWith("is ")
+) {
+  return "FAQ";
+}
 
-  if (
-    query.includes("sales pitch") ||
-    query.includes("advantages") ||
-    query.includes("benefits")
-  ) {
+if (
+  query.includes("sales pitch") ||
+  query.includes("advantages") ||
+  query.includes("benefits")
+) {
     return "SALES_PITCH";
   }
 
