@@ -238,6 +238,7 @@ export default function ChatWindow({ open, onClose }) {
         style={{
           flex: 1,
           overflowY: "auto",
+          padding: "16px",
           background: "#F7F8FA",
           padding: "18px",
           display: "flex",
@@ -272,7 +273,7 @@ export default function ChatWindow({ open, onClose }) {
             ? "#FFFFFF"
             : "#222",
 
-        padding: "14px 16px",
+        padding: "10px 14px",
 
         borderRadius:
           msg.sender === "user"
@@ -284,9 +285,9 @@ export default function ChatWindow({ open, onClose }) {
 
         whiteSpace: "pre-wrap",
 
-        fontSize: "15px",
+        fontSize: "14px",
 
-        lineHeight: "24px",
+        lineHeight: "20px",
       }}
     >
 
@@ -375,11 +376,11 @@ export default function ChatWindow({ open, onClose }) {
           placeholder="Ask Salesforce AI Assistant..."
           style={{
             flex: 1,
-            padding: "14px 16px",
+            padding: "10px 14px",
             border: "1px solid #D1D5DB",
             borderRadius: "12px",
             outline: "none",
-            fontSize: "15px",
+            fontSize: "14px",
           }}
         />
 
@@ -391,11 +392,11 @@ export default function ChatWindow({ open, onClose }) {
             color: "#FFFFFF",
             border: "none",
             borderRadius: "12px",
-            padding: "14px 22px",
+            padding: "10px 18px",
             cursor: loading ? "not-allowed" : "pointer",
             fontWeight: "600",
             fontSize: "15px",
-            minWidth: "90px",
+            minWidth: "70px",
           }}
         >
           {loading ? "..." : "Send"}
