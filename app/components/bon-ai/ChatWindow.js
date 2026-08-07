@@ -238,9 +238,9 @@ export default function ChatWindow({ open, onClose }) {
         style={{
           flex: 1,
           overflowY: "auto",
-          padding: "16px",
+          padding: "12px",
           background: "#F7F8FA",
-          padding: "18px",
+          padding: "12px",
           display: "flex",
           flexDirection: "column",
           gap: "16px",
