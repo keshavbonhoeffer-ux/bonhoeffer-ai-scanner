@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Robot3D from "../components/bon-ai/Robot3D";
+import Image from "next/image";
 import ChatWindow from "../components/bon-ai/ChatWindow";
 
 export default function BonAI() {
-  const [messages, setMessages] = useState([]);
   const [chatOpen, setChatOpen] = useState(false);
 
   return (
@@ -13,162 +12,198 @@ export default function BonAI() {
       style={{
         display: "flex",
         height: "100vh",
-        background: "#f4f7f9",
+        background: "#F5F7FA",
         fontFamily: "Arial, sans-serif",
       }}
     >
+      {/* ========================= */}
       {/* Sidebar */}
+      {/* ========================= */}
+
       <div
         style={{
           width: "280px",
-          background: "#0B6E4F",
-          color: "white",
+          background: "#0F5D47",
+          color: "#fff",
           padding: "25px",
           boxSizing: "border-box",
         }}
       >
-        <h2 style={{ marginTop: 0 }}>🤖 BON AI</h2>
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "25px",
+          }}
+        >
+          <Image
+            src="/images/bonhoeffer_logo.png"
+            alt="Bonhoeffer Machines"
+            width={180}
+            height={80}
+          />
+        </div>
 
         <hr
           style={{
-            border: "1px solid rgba(255,255,255,0.2)",
-            margin: "20px 0",
+            border: "1px solid rgba(255,255,255,.15)",
+            marginBottom: "25px",
           }}
         />
 
-        <p>🏠 Dashboard</p>
-        <p>📦 Product Assistant</p>
-        <p>👤 Lead Assistant</p>
-        <p>💼 Opportunity Assistant</p>
-        <p>📈 Business This Month</p>
-        <p>🕘 Customer History</p>
+        <div style={{ lineHeight: "45px", fontSize: "16px" }}>
+          <div>🏠 Dashboard</div>
+          <div>📦 Product Information</div>
+          <div>👤 Lead Assistant</div>
+          <div>💼 Opportunity Assistant</div>
+          <div>📊 Business Analytics</div>
+          <div>🕘 Customer History</div>
+        </div>
       </div>
 
-      {/* Main */}
+      {/* ========================= */}
+      {/* Main Area */}
+      {/* ========================= */}
+
       <div
         style={{
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          position: "relative",
         }}
       >
         {/* Header */}
+
         <div
           style={{
-            background: "#fff",
-            padding: "20px 30px",
-            borderBottom: "1px solid #ddd",
-            fontSize: "24px",
+            background: "#ffffff",
+            padding: "22px 35px",
+            borderBottom: "1px solid #E5E7EB",
+            fontSize: "28px",
             fontWeight: "bold",
+            color: "#0F5D47",
           }}
         >
-          Welcome to BON AI
+          Salesforce AI Assistant
         </div>
 
-        {/* Dashboard */}
+        {/* Content */}
+
         <div
           style={{
             flex: 1,
-            padding: "30px",
-            overflowY: "auto",
+            overflow: "auto",
+            padding: "40px",
           }}
         >
           <div
             style={{
-              maxWidth: "800px",
+              maxWidth: "900px",
               margin: "0 auto",
-              background: "#fff",
-              borderRadius: "15px",
-              padding: "25px",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
+              background: "#ffffff",
+              borderRadius: "18px",
+              padding: "45px",
+              boxShadow: "0 8px 25px rgba(0,0,0,.08)",
             }}
           >
-            <h2>👋 Hello, Keshav!</h2>
+            <div
+              style={{
+                textAlign: "center",
+              }}
+            >
+              <Image
+                src="/images/bonhoeffer_logo.png"
+                alt="Bonhoeffer Machines"
+                width={220}
+                height={90}
+              />
 
-            <p>
-              I am <strong>BON AI</strong>, your Enterprise AI Assistant.
+              <h1
+                style={{
+                  marginTop: "25px",
+                  color: "#0F5D47",
+                  fontSize: "38px",
+                }}
+              >
+                Salesforce AI Assistant
+              </h1>
+
+              <p
+                style={{
+                  fontSize: "18px",
+                  color: "#666",
+                  marginTop: "10px",
+                }}
+              >
+                Your Intelligent Salesforce Business Assistant
+              </p>
+            </div>
+
+            <hr
+              style={{
+                margin: "40px 0",
+                border: "1px solid #ECECEC",
+              }}
+            />
+
+            <h2
+              style={{
+                color: "#0F5D47",
+                marginBottom: "20px",
+              }}
+            >
+              What can Salesforce AI Assistant do?
+            </h2>
+
+            <p
+              style={{
+                fontSize: "17px",
+                color: "#555",
+                lineHeight: "32px",
+              }}
+            >
+              Salesfoce AI Assistant helps employees quickly access Salesforce
+              business information, analyze sales performance, retrieve customer
+              history, manage opportunities, and answer product-related
+              questions using AI.
             </p>
 
-            <ul style={{ lineHeight: "2" }}>
-              <li>📦 Product Information</li>
-              <li>👤 Lead Management</li>
-              <li>💼 Opportunity Assistance</li>
-              <li>📈 Business Performance</li>
-              <li>🕘 Customer History</li>
-              <li>🤖 AI Powered Answers</li>
-            </ul>
+            <div
+              style={{
+                marginTop: "35px",
+                lineHeight: "40px",
+                fontSize: "17px",
+              }}
+            >
+              ✅ Product Information
+              <br />
+              ✅ Lead Management
+              <br />
+              ✅ Opportunity Assistance
+              <br />
+              ✅ Sales Performance
+              <br />
+              ✅ Business Analytics
+              <br />
+              ✅ Customer History
+              <br />
+              ✅ AI Powered Business Answers
+            </div>
           </div>
         </div>
 
-        {/* Bottom Input */}
-        <div
-          style={{
-            padding: "20px",
-            background: "#fff",
-            borderTop: "1px solid #ddd",
-          }}
-        >
-          <input
-            type="text"
-            placeholder="Ask BON AI anything..."
-            style={{
-              width: "100%",
-              padding: "15px",
-              fontSize: "16px",
-              borderRadius: "10px",
-              border: "1px solid #ccc",
-              outline: "none",
-              boxSizing: "border-box",
-            }}
-          />
-        </div>
-
-        {/* ========================= */}
-        {/* Floating 3D Robot */}
-        {/* ========================= */}
+        {/* Footer */}
 
         <div
           style={{
-            position: "fixed",
-
-            // Move robot much further right
-            right: "-90px",
-
-            // Lower slightly
-            bottom: "-20px",
-
-            width: "420px",
-            height: "420px",
-
-            zIndex: 9999,
-
-            // Container ignores clicks
-            pointerEvents: "none",
+            background: "#ffffff",
+            borderTop: "1px solid #E5E7EB",
+            padding: "18px",
+            textAlign: "center",
+            color: "#666",
+            fontSize: "15px",
           }}
         >
-          <div
-            onClick={() => setChatOpen(!chatOpen)}
-            style={{
-              width: "100%",
-              height: "100%",
-
-              cursor: "pointer",
-
-              // Only robot receives clicks
-              pointerEvents: "auto",
-
-              transition: "all .3s ease",
-
-              transform: chatOpen
-                ? "scale(1.08)"
-                : "scale(1)",
-
-              transformOrigin: "bottom right",
-            }}
-          >
-            <Robot3D />
-          </div>
+          Click the AI Assistant icon to start a conversation.
         </div>
 
         {/* Chat Window */}
