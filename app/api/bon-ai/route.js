@@ -330,7 +330,11 @@ const months = [
 
 const hasMonth = months.some(month => query.includes(month));
 
-const hasSalesperson = users.some(user => query.includes(user));
+const hasSalesperson = users.some(
+  user =>
+    query.includes(user.queryName.toLowerCase()) ||
+    query.includes(user.salesforceName.toLowerCase())
+);
 
 if (
   hasMonth ||
