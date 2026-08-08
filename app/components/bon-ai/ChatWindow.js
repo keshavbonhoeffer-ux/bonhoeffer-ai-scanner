@@ -329,78 +329,73 @@ export default function ChatWindow({ open, onClose }) {
 
   <div
     style={{
-      display: "flex",
-      justifyContent: "flex-start",
+      background: "#FFFFFF",
+      padding: "14px 18px",
+      borderRadius: "18px",
+      boxShadow: "0 4px 12px rgba(0,0,0,.08)",
+      color: "#666",
+      fontSize: "15px",
     }}
   >
-
-    <div
-      style={{
-        background: "#FFFFFF",
-        padding: "14px 18px",
-        borderRadius: "18px",
-        boxShadow: "0 4px 12px rgba(0,0,0,.08)",
-        color: "#666",
-        fontSize: "15px",
-      }}
-    >
-      🤖 Salesforce AI Assistant is typing...
-    </div>
-
+    🤖 Salesforce AI Assistant is typing...
   </div>
 
 )}
 
-      </div>
+</div>
 
-      {/* ================= INPUT ================= */}
+{/* ================= INPUT ================= */}
 
-      <div
-        style={{
-          background: "#FFFFFF",
-          borderTop: "1px solid #E5E7EB",
-          padding: "16px",
-          display: "flex",
-          gap: "12px",
-          alignItems: "center",
-        }}
-      ></div>
-              <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              sendMessage();
-            }
-          }}
-          placeholder="Ask Salesforce AI Assistant..."
-          style={{
-            flex: 1,
-            padding: "10px 14px",
-            border: "1px solid #D1D5DB",
-            borderRadius: "12px",
-            outline: "none",
-            fontSize: "14px",
-          }}
-        />
+<div
+  style={{
+    background: "#FFFFFF",
+    borderTop: "1px solid #E5E7EB",
+    padding: "10px",
+    display: "flex",
+    gap: "10px",
+    alignItems: "center",
+    flexShrink: 0,
+  }}
+>
 
-        <button
-          onClick={sendMessage}
-          disabled={loading}
-          style={{
-            background: loading ? "#9CA3AF" : "#0B6E4F",
-            color: "#FFFFFF",
-            border: "none",
-            borderRadius: "12px",
-            padding: "10px 18px",
-            cursor: loading ? "not-allowed" : "pointer",
-            fontWeight: "600",
-            fontSize: "15px",
-            minWidth: "70px",
-          }}
-        >
-          {loading ? "..." : "Send"}
-</button>
+  <input
+    value={input}
+    onChange={(e) => setInput(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    }}
+    placeholder="Ask Salesforce AI Assistant..."
+    style={{
+      flex: 1,
+      padding: "10px 14px",
+      border: "1px solid #D1D5DB",
+      borderRadius: "12px",
+      outline: "none",
+      fontSize: "14px",
+    }}
+  />
+
+  <button
+    onClick={sendMessage}
+    disabled={loading}
+    style={{
+      background: loading ? "#9CA3AF" : "#0B6E4F",
+      color: "#FFFFFF",
+      border: "none",
+      borderRadius: "12px",
+      padding: "10px 18px",
+      cursor: loading ? "not-allowed" : "pointer",
+      fontWeight: "600",
+      fontSize: "15px",
+      minWidth: "70px",
+    }}
+  >
+    {loading ? "..." : "Send"}
+  </button>
+
+</div>
 
 </div>
 
