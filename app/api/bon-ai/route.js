@@ -470,11 +470,6 @@ if (
 ) {
   return "REPORT";
 }
-  const salesQuery = parseSalesQuery(message);
-
-if (salesQuery) {
-  return "SALES_QUERY";
-}
 
 return "GEMINI";
 }
