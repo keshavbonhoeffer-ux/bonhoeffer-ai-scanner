@@ -7,7 +7,8 @@ import {
   getOpportunities,
   getTopOpportunities,
   getProducts,
-  getBusinessSummary
+  getBusinessSummary,
+  getAccountBusinessSummary
 } from "@/lib/salesforce/api";
 
 import {
@@ -308,6 +309,20 @@ if (
 // ===============================
 // BUSINESS ANALYTICS
 // ===============================
+
+// ==========================================
+// ACCOUNT BUSINESS
+// ==========================================
+
+if (
+  query.includes("total business") ||
+  query.includes("business of") ||
+  query.includes("business from") ||
+  query.includes("account business") ||
+  query.includes("total sales of")
+) {
+  return "ACCOUNT_BUSINESS";
+}
 
 // ==========================================
 // SALES QUERY (MUST COME FIRST)
@@ -1675,6 +1690,171 @@ case "INTERNATIONAL_PIPELINE": {
       "PIPELINE"
     ),
   });
+}
+
+// ==========================================
+// ACCOUNT BUSINESS
+// ==========================================
+
+case "ACCOUNT_BUSINESS": {
+
+  console.log("✅ ACCOUNT_BUSINESS CASE EXECUTED");
+
+  if (!accessToken) {
+    return Response.json({
+      reply: "Please login to Salesforce first."
+    });
+  }
+
+  try {
+
+    const query = normalize(message);
+
+    // ==========================================
+    // Detect Month
+    // ==========================================
+
+    const MONTHS = {
+      january: 1,
+      february: 2,
+      march: 3,
+      april: 4,
+      may: 5,
+      june: 6,
+      july: 7,
+      august: 8,
+      september: 9,
+      october: 10,
+      november: 11,
+      december: 12,
+    };
+
+    let selectedMonth = null;
+
+    for (const month in MONTHS) {
+      if (query.includes(month)) {
+        selectedMonth = MONTHS[month];
+        break;
+      }
+    }
+
+    // ==========================================
+    // Extract Account Name
+    // ==========================================
+
+    let accountName = message;
+
+    accountName = accountName
+      .replace(/what is/gi, "")
+      .replace(/what's/gi, "")
+      .replace(/show me/gi, "")
+      .replace(/show/gi, "")
+      .replace(/tell me/gi, "")
+      .replace(/total business/gi, "")
+      .replace(/business of/gi, "")
+      .replace(/business from/gi, "")
+      .replace(/account business/gi, "")
+      .replace(/total sales of/gi, "");
+
+    // Remove month
+    for (const month in MONTHS) {
+      accountName = accountName.replace(
+        new RegExp(month, "gi"),
+        ""
+      );
+    }
+
+    accountName = accountName
+      .replace(/\b(business|sales)\b/gi, "")
+      .replace(/\?/g, "")
+      .trim();
+
+    console.log("================================");
+    console.log("ACCOUNT BUSINESS");
+    console.log("Account:", accountName);
+    console.log("Selected Month:", selectedMonth);
+    console.log("================================");
+
+    const accountBusiness = await getAccountBusinessSummary(
+      accessToken,
+      instanceUrl,
+      accountName,
+      selectedMonth
+    );
+
+    if (!accountBusiness.records.length) {
+
+      return Response.json({
+        reply:
+          `No business found for ${accountBusiness.accountName || accountName}` +
+          `${selectedMonth ? " for the selected month." : "."}`
+      });
+
+    }
+
+    // ==========================================
+    // Calculate Total Business
+    // ==========================================
+
+    const totalAmount = accountBusiness.records.reduce(
+      (sum, opp) => sum + (opp.Amount || 0),
+      0
+    );
+
+    // ==========================================
+    // Month Name
+    // ==========================================
+
+    const monthNames = [
+      "",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+
+    let reply = "";
+
+    reply += `🏢 Account : ${accountBusiness.accountName}\n`;
+
+    if (selectedMonth) {
+      reply += `📅 Month : ${monthNames[selectedMonth]}\n`;
+    }
+
+    reply += `📂 Record Type : ${accountBusiness.recordType}\n`;
+
+    reply += `💰 Total Business : ${
+      accountBusiness.recordType === "International"
+        ? `USD ${totalAmount.toLocaleString()}`
+        : `₹${totalAmount.toLocaleString()}`
+    }\n`;
+
+    reply += `📦 Opportunities : ${accountBusiness.records.length}`;
+
+    return Response.json({
+      reply
+    });
+
+  } catch (error) {
+
+    console.error("ACCOUNT BUSINESS ERROR:", error);
+
+    return Response.json({
+      reply:
+        error.message ||
+        "Failed to fetch Account Business from Salesforce."
+    });
+
+  }
+
 }
 
 // ==========================================
