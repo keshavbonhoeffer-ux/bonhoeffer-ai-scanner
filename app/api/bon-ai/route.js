@@ -1767,7 +1767,8 @@ case "ACCOUNT_BUSINESS": {
 
     accountName = accountName
       .replace(/what is/gi, "")
-      .replace(/what's/gi, "")
+.replace(/what was/gi, "")
+.replace(/what's/gi, "")
       .replace(/show me/gi, "")
       .replace(/show/gi, "")
       .replace(/tell me/gi, "")
