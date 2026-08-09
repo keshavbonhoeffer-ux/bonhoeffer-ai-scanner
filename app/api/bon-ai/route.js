@@ -319,7 +319,28 @@ if (
   query.includes("business of") ||
   query.includes("business from") ||
   query.includes("account business") ||
-  query.includes("total sales of")
+  query.includes("total sales of") ||
+
+  // Account + Month + Business
+  (
+    query.includes("business") &&
+[
+  "january",
+  "february",
+  "march",
+  "april",
+  "may",
+  "june",
+  "july",
+  "august",
+  "september",
+  "october",
+  "november",
+  "december"
+].some(month => query.includes(month)) &&
+    !query.includes("my business") &&
+    !query.includes("my sales")
+  )
 ) {
   return "ACCOUNT_BUSINESS";
 }
