@@ -311,6 +311,27 @@ if (
 // ===============================
 
 // ==========================================
+// DOMESTIC / INTERNATIONAL BUSINESS
+// MUST COME BEFORE ACCOUNT BUSINESS
+// ==========================================
+
+if (
+  query.includes("domestic total business") ||
+  query.includes("domestic business") ||
+  query.includes("domestic sales")
+) {
+  return "DOMESTIC_CLOSED_WON";
+}
+
+if (
+  query.includes("international total business") ||
+  query.includes("international business") ||
+  query.includes("international sales")
+) {
+  return "INTERNATIONAL_CLOSED_WON";
+}
+
+// ==========================================
 // ACCOUNT BUSINESS
 // ==========================================
 
