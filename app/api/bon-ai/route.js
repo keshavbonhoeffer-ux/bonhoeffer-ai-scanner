@@ -335,6 +335,41 @@ if (
 // ACCOUNT BUSINESS
 // ==========================================
 
+// ==========================================
+// MONTHLY BUSINESS QUERY
+// ==========================================
+
+const monthlyBusinessQuery =
+  [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december"
+  ].some(month => query.includes(month)) &&
+  (
+    query.includes("month business") ||
+    query.includes("monthly business") ||
+    query.includes("domestic business") ||
+    query.includes("international business")
+  );
+
+if (monthlyBusinessQuery) {
+  return "SALES_QUERY";
+}
+
+
+// ==========================================
+// ACCOUNT BUSINESS
+// ==========================================
+
 if (
   !salesperson &&
   (
@@ -360,7 +395,11 @@ if (
         "december"
       ].some(month => query.includes(month)) &&
       !query.includes("my business") &&
-      !query.includes("my sales")
+      !query.includes("my sales") &&
+      !query.includes("month business") &&
+      !query.includes("monthly business") &&
+      !query.includes("domestic business") &&
+      !query.includes("international business")
     )
   )
 ) {
