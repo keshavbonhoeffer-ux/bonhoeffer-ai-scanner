@@ -315,34 +315,45 @@ if (
 // ==========================================
 
 if (
-  query.includes("total business") ||
-  query.includes("business of") ||
-  query.includes("business from") ||
-  query.includes("account business") ||
-  query.includes("total sales of") ||
-
-  // Account + Month + Business
+  !salesperson &&
   (
-    query.includes("business") &&
-[
-  "january",
-  "february",
-  "march",
-  "april",
-  "may",
-  "june",
-  "july",
-  "august",
-  "september",
-  "october",
-  "november",
-  "december"
-].some(month => query.includes(month)) &&
-    !query.includes("my business") &&
-    !query.includes("my sales")
+    query.includes("total business") ||
+    query.includes("business of") ||
+    query.includes("business from") ||
+    query.includes("account business") ||
+    query.includes("total sales of") ||
+    (
+      query.includes("business") &&
+      [
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june",
+        "july",
+        "august",
+        "september",
+        "october",
+        "november",
+        "december"
+      ].some(month => query.includes(month)) &&
+      !query.includes("my business") &&
+      !query.includes("my sales")
+    )
   )
 ) {
   return "ACCOUNT_BUSINESS";
+}
+
+if (
+  query.includes("report") ||
+  query.includes("create report") ||
+  query.includes("generate report") ||
+  query.includes("business report") ||
+  query.includes("sales report")
+) {
+  return "REPORT";
 }
 
 // ==========================================
@@ -500,12 +511,7 @@ if (
   return "DASHBOARD";
 }
 
-if (
-  query.includes("report") ||
-  query.includes("create report")
-) {
-  return "REPORT";
-}
+
 
 return "GEMINI";
 }
@@ -1876,6 +1882,43 @@ case "ACCOUNT_BUSINESS": {
     });
 
   }
+
+}
+
+// ==========================================
+// BUSINESS REPORT
+// ==========================================
+
+case "REPORT": {
+
+  console.log("✅ REPORT CASE EXECUTED");
+
+  if (!accessToken) {
+    return Response.json({
+      reply: "Please login to Salesforce first."
+    });
+  }
+
+  return Response.json({
+    reply:
+      `📊 BON AI Business Report
+
+I can generate reports using:
+
+• Account-wise
+• Month-wise
+• Salesperson-wise
+• Domestic / International
+• Closed Won / Pipeline
+• Total Business
+• Opportunity Details
+• Excel / PDF Export
+
+Please tell me the report you want.
+
+Example:
+"Create a July business report for Hindustan Suppliers"`
+  });
 
 }
 
